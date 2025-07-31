@@ -3,19 +3,35 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\BlogPost;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Illuminate\Support\Facades\Gate;
+
 
 class BlogPostController extends Controller
 {
+
     public function AddPost(){
+        Gate::authorize('is-super-admin');
         return view('backend.blog.add_post');
     } // End method
 
     public function StorePost(Request $request){
+        if (!Gate::allows('is-super-admin')) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $validatedData = $request->validate([
+            'post_title' => 'required|string|max:255',
+            'post_tags' => 'required|string',
+            'post_description' => 'required|string',
+            'post_photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
         // 409 x 368
         $file = $request->file('post_photo');
         $imageName = 'post_'.hexdec(uniqid()).'.'.$file->getClientOriginalExtension();// work453rdfg-45.png
@@ -27,11 +43,11 @@ class BlogPostController extends Controller
 
         $post = new BlogPost();
         $post->user_id = Auth::user()->id;
-        $post->post_title = $request->post_title;
-        $post->post_slug = strtolower(str_replace(' ', '-', $request->post_title));
+        $post->post_title = $validatedData['post_title'];
+        $post->post_slug = strtolower(str_replace(' ', '-', $validatedData['post_title']));
         $post->photo = $imagePath;
-        $post->post_tags = $request->post_tags;
-        $post->post_description = $request->post_description;
+        $post->post_tags = $validatedData['post_tags'];
+        $post->post_description = $validatedData['post_description'];
         $post->save();
 
         $notification = [
@@ -40,50 +56,75 @@ class BlogPostController extends Controller
         ];
 
         return redirect()->route('all.post')->with($notification);
-    }  // End method
-
-    public function AllPost(){
-        $posts = BlogPost::Latest()->get();
-        return view('backend.blog.all_posts', compact('posts'));
     } // End method
 
+
+    public function AllPost(){
+        Gate::authorize('is-super-admin');
+        $posts = BlogPost::with('author')->Latest()->get();
+        return view('backend.blog.all_posts', compact('posts'));
+    }
+
+
     public function EditPost($id){
+        Gate::authorize('is-super-admin');
         $post = BlogPost::findOrFail($id);
         return view('backend.blog.edit_post', compact('post'));
     } // End method
 
-    public function UpdatePost(Request $request){
-        if($request->hasFile('post_photo')){
-            $oldPostPhoto = BlogPost::find($request->id);
-            unlink($oldPostPhoto->photo);
 
+    public function UpdatePost(Request $request, $id){
+        if (!Gate::allows('is-super-admin')) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $validatedData = $request->validate([
+            'post_title' => 'required|string|max:255',
+            'post_tags' => 'required|string',
+            'post_description' => 'required|string',
+            'post_photo' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
+        $post = BlogPost::find($request->id);
+
+        if($request->hasFile('post_photo')){
+            // Delete the old photo
+            if ($post->photo) {
+                unlink(public_path($post->photo));
+            }
+
+            // Upload the new photo
             $file = $request->file('post_photo');
-            $imageName = 'post_'.hexdec(uniqid()).'.'.$file->getClientOriginalExtension();// work453rdfg-45.png
+            $imageName = 'post_'.hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
             $manager = new ImageManager(new Driver());
             $img = $manager->read($file);
             $img = $img->resize(409,368);
             $img = $img->toJpeg(80)->save(base_path('public/uploads/blog/'.$imageName));
             $imagePath = 'uploads/blog/'.$imageName;
-    
-            $post = BlogPost::find($request->id);
-            $post->user_id = Auth::user()->id;
-            $post->post_title = $request->post_title;
-            $post->post_slug = strtolower(str_replace(' ', '-', $request->post_title));
             $post->photo = $imagePath;
-            $post->post_tags = $request->post_tags;
-            $post->post_description = $request->post_description;
-            $post->save();
-    
-            $notification = [
-                'message' => 'BlogPost Updated Successfully!',
-                'alert-type' => 'info'
-            ];
-    
-            return redirect()->route('all.post')->with($notification);
         }
+
+        $post->user_id = Auth::user()->id;
+        $post->post_title = $validatedData['post_title'];
+        $post->post_slug = strtolower(str_replace(' ', '-', $validatedData['post_title']));
+        $post->post_tags = $validatedData['post_tags'];
+        $post->post_description = $validatedData['post_description'];
+        $post->save();
+
+        $notification = [
+            'message' => 'BlogPost Updated Successfully!',
+            'alert-type' => 'info'
+        ];
+
+        return redirect()->route('all.post')->with($notification);
     } // End method
 
+
+
+
+
     public function DeletePost($id){
+        Gate::authorize('is-super-admin');
         $oldPostPhoto = BlogPost::find($id);
         unlink($oldPostPhoto->photo);
 

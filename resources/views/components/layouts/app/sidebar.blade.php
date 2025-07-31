@@ -8,7 +8,8 @@
     <flux:sidebar.toggle class="lg:hidden" icon="x-mark"/>
 
     <a href="{{ route('home') }}" class="mr-5 flex items-center space-x-2">
-        <x-app-logo class="size-8"></x-app-logo>
+{{--        <x-app-logo class="size-8"></x-app-logo>--}}
+        <x-app-logo-icon class="size-5 fill-current text-white dark:text-black" />
     </a>
 
     <div>

@@ -1,10 +1,10 @@
 <nav class="sidebar">
     <div class="sidebar-header">
 
-        <a href="{{ route('admin.index') }}" class="sidebar-brand">
+{{--        <a href="{{ route('admin.index') }}" class="sidebar-brand">--}}
 
-        <span>Admin</span>
-      </a>
+{{--        <span>Admin</span>--}}
+{{--      </a>--}}
       <div class="sidebar-toggler not-active">
         <span></span>
         <span></span>
@@ -75,12 +75,12 @@
 {{--          </a>--}}
 {{--        </li>--}}
 
-{{--        <li class="nav-item">--}}
-{{--          <a href="{{ route('my.education') }}" class="nav-link">--}}
-{{--            <i class="link-icon" data-feather="box"></i>--}}
-{{--            <span class="link-title">My Education</span>--}}
-{{--          </a>--}}
-{{--        </li>--}}
+        <li class="nav-item">
+          <a href="{{ route('my.education') }}" class="nav-link">
+            <i class="link-icon" data-feather="box"></i>
+            <span class="link-title">My Education</span>
+          </a>
+        </li>
 
 {{--        <li class="nav-item">--}}
 {{--          <a class="nav-link" data-bs-toggle="collapse" href="#myskill" role="button" aria-expanded="false" aria-controls="uiComponents">--}}

@@ -17,19 +17,19 @@
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i data-feather="mail"></i>
-                </a>
+{{--                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                    <i data-feather="mail"></i>--}}
+{{--                </a>--}}
 
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i data-feather="bell"></i>
-                    <div class="indicator">
-                        <div class="circle"></div>
-                    </div>
-                </a>
-            </li>
+{{--                <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                    <i data-feather="bell"></i>--}}
+{{--                    <div class="indicator">--}}
+{{--                        <div class="circle"></div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             <li class="nav-item dropdown">
 {{--                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
 {{--                    <img class="wd-30 ht-30 rounded-circle" src="{{ $admin->photo ? asset($admin->photo) : asset('uploads/no-img-avatar.png') }}" alt="profile">--}}

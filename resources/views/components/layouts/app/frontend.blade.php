@@ -28,7 +28,9 @@
         <flux:spacer/>
         <flux:spacer/>
         @guest
-            <flux:navbar.item href="{{ route('blog') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>
+            <flux:navbar.item href="{{ route('portfolio') }}" :current="request()->routeIs('portfolio')"> Portfolio </flux:navbar.item>
+{{--            <flux:navbar.item href="{{ route('blog') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>--}}
+            <flux:navbar.item href="{{ route('blog') }}" :current="request()->routeIs('blog')"> Blog </flux:navbar.item>
             <flux:navbar.item href="{{ route('contact') }}" :current="request()->routeIs('contact')"> Contact </flux:navbar.item>
         @endguest
         @auth

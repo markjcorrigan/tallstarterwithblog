@@ -25,7 +25,7 @@
                         <a href="/post/details/{{ $post->post_slug }}">
                            <img src="{{asset($post->photo)}}" alt="" />
                         </a>
-                        <a href="#" class="category">Tutorial</a>
+{{--                        <a href="#" class="category">Tutorial</a>--}}
                      </div>
 
                      <div class="blog-content">

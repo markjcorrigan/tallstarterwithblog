@@ -32,6 +32,8 @@ class PermissionSeeder extends Seeder
             'create permissions',
             'update permissions',
             'delete permissions',
+
+            'access blog',
         ];
 
         foreach ($permissions as $permission) {

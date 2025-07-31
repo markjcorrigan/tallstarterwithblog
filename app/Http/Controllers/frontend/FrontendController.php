@@ -22,8 +22,14 @@ class FrontendController extends Controller
 //    }
     public function blog()
     {
-     return view('frontend.homepage'); // or any other view you want to display
+     return view('frontend.blogpage'); // or any other view you want to display
 //        return view('frontend.test');
+
+    }
+
+    public function portfolio()
+    {
+        return view('frontend.portfoliopage'); // or any other view you want to display
 
     }
 

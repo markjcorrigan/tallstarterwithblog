@@ -4,7 +4,7 @@
    <meta charset="utf-8" />
    <meta http-equiv="x-ua-compatible" content="ie=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="description" content="Hey there! I’m Mustapha, I studied computer science for 4 years at AL-QALAM University Katsina, graduated in 2022 atfer completing Information Technology Developer (ITD) program at Legacy Computer Institute kaduna. I design and develop services for customers of all sizes, specialized in creating stylish, modern websites / web applications, web services and online stores" />
+   <meta name="description" content="" />
 
    <!-- Site Title -->
    <title>{{ config('app.name') }} </title>
@@ -77,9 +77,9 @@
 {{--        @include('frontend.partials.portfolio')--}}
 {{--      <!-- PORTFOLIO SECTION END -->--}}
 
-{{--      <!-- RESUME SECTION START -->--}}
-{{--        @include('frontend.partials.resume')--}}
-{{--      <!-- RESUME SECTION END -->--}}
+      <!-- RESUME SECTION START -->
+        @include('frontend.partials.resume')
+      <!-- RESUME SECTION END -->
 
 {{--      <!-- SKILLS SECTION START -->--}}
 {{--        @include('frontend.partials.skills')--}}
@@ -89,9 +89,9 @@
 {{--        @include('frontend.partials.testimonial')--}}
 {{--      <!-- TESTIMONIAL SECTION END -->--}}
 
-      <!-- BLOG SECTION STAR -->
-        @include('frontend.partials.blog')
-      <!-- BLOG SECTION END -->
+{{--      <!-- BLOG SECTION STAR -->--}}
+{{--        @include('frontend.partials.blog')--}}
+{{--      <!-- BLOG SECTION END -->--}}
 
       <!-- CONTACT SECTION START -->
         @include('frontend.partials.contact')

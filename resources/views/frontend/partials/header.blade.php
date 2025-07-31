@@ -29,7 +29,12 @@
 {{--                </nav>--}}
              </div>
              <div class="header-button">
-                <a href="/" class="btn tj-btn-primary">Home</a>
+
+{{--                 <a href="{{ url('/') }}" class="btn tj-btn-primary">--}}
+                 <a href="{{ url('/') }}" class="btn tj-btn-primary p-2" style="background-color: #808080; border: none;">
+                     <img src="{{ asset('images/hometransparent.png') }}" alt="Home" style="width: 40px; height: 40px;">
+                 </a>
+
              </div>
              <div class="menu-bar d-lg-none">
                 <button>
