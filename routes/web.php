@@ -25,16 +25,33 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::middleware(['auth', 'verified', 'can:is-super-admin'])->group(function () {
+
+//Route::middleware(['auth', 'verified', 'role:super admin'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::controller(BlogPostController::class)->group(function(){
-        Route::get('all-post', 'AllPost')->name('all.post');
-        Route::get('add-post', 'AddPost')->name('add.post');
-        Route::post('store-post', 'StorePost')->name('store.post'); //The get method is not supported?
-        Route::get('edit-post/{id}', 'EditPost')->name('edit.post');
-        Route::post('update-post/{id}', 'UpdatePost')->name('update.post');//The get method is not supported?
-        Route::get('delete-post/{id}', 'DeletePost')->name('delete.post');
+        Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'can:all post'])->name('all.post');
+        Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'can:add post'])->name('add.post');
+        Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'can:store post'])->name('store.post');
+        Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'can:edit post'])->name('edit.post');
+        Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'can:update post'])->name('update.post');
+        Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'can:delete post'])->name('delete.post');
     });
 });
+
+//Route::middleware(['auth', 'verified', 'role:Super Admin'])->group(function () {
+//Route::prefix('admin')->as('admin.')->group(function (): void {
+//    Route::controller(BlogPostController::class)->group(function(){
+//        Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'can:all post'])->name('all.post');
+//        Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'can:add post'])->name('add.post');
+//        Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'can:store post'])->name('store.post');
+//
+////        Route::get('add-post', 'AddPost')->name('add.post');
+////        Route::post('store-post', 'StorePost')->name('store.post'); //The get method is not supported?
+//        Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'can:edit post'])->name('edit.post');
+//        Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'can:update post'])->name('update.post');
+//        Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'can:delete post'])->name('delete.post');
+//    });
+//});
 
 Route::controller(CommentController::class)->group(function(){
     Route::post('user-comments', 'UserComments')->name('user.comments');
@@ -54,7 +71,7 @@ Route::middleware(['auth'])->group(function (): void {
     Route::get('settings/locale', \App\Livewire\Settings\Locale::class)->name('settings.locale');
 
     // Admin
-    Route::middleware(['auth', 'verified', 'can:is-super-admin'])->group(function () {
+    Route::middleware(['auth', 'verified', 'role:Super Admin'])->group(function () {
         Route::get('/privateone', PrivateOne::class);
     });
     // Services section all routes

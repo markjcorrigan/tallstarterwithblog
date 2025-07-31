@@ -16,14 +16,14 @@ class BlogPostController extends Controller
 {
 
     public function AddPost(){
-        Gate::authorize('is-super-admin');
+//        Gate::authorize('is-super-admin');
         return view('backend.blog.add_post');
     } // End method
 
     public function StorePost(Request $request){
-        if (!Gate::allows('is-super-admin')) {
-            abort(403, 'Unauthorized action.');
-        }
+//        if (!Gate::allows('is-super-admin')) {
+//            abort(403, 'Unauthorized action.');
+//        }
 
         $validatedData = $request->validate([
             'post_title' => 'required|string|max:255',
@@ -60,23 +60,23 @@ class BlogPostController extends Controller
 
 
     public function AllPost(){
-        Gate::authorize('is-super-admin');
+//        Gate::authorize('is-super-admin');
         $posts = BlogPost::with('author')->Latest()->get();
         return view('backend.blog.all_posts', compact('posts'));
     }
 
 
     public function EditPost($id){
-        Gate::authorize('is-super-admin');
+//        Gate::authorize('is-super-admin');
         $post = BlogPost::findOrFail($id);
         return view('backend.blog.edit_post', compact('post'));
     } // End method
 
 
     public function UpdatePost(Request $request, $id){
-        if (!Gate::allows('is-super-admin')) {
-            abort(403, 'Unauthorized action.');
-        }
+//        if (!Gate::allows('is-super-admin')) {
+//            abort(403, 'Unauthorized action.');
+//        }
 
         $validatedData = $request->validate([
             'post_title' => 'required|string|max:255',
@@ -124,7 +124,7 @@ class BlogPostController extends Controller
 
 
     public function DeletePost($id){
-        Gate::authorize('is-super-admin');
+//        Gate::authorize('is-super-admin');
         $oldPostPhoto = BlogPost::find($id);
         unlink($oldPostPhoto->photo);
 
