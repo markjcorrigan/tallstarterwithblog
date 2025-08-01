@@ -16,21 +16,19 @@ class FrontendController extends Controller
 //    public function blog()
 //    {
 //        // Your blog logic here
-//        $posts = BlogPost::latest()->get(); // Fetch blog posts
-//        return view('frontend.homepage', compact('posts'));
 //
+//        $posts = BlogPost::latest()->get();
+////        dd($posts); // This will dump the posts and exit the script
+//        return view('frontend.blogpage', compact('posts'));
 //    }
     public function blog()
     {
-     return view('frontend.blogpage'); // or any other view you want to display
-//        return view('frontend.test');
-
+        return view('frontend.blogpage'); // or any other view you want to display
     }
 
     public function portfolio()
     {
         return view('frontend.portfoliopage'); // or any other view you want to display
-
     }
 
 //

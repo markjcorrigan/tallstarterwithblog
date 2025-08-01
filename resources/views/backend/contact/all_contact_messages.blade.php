@@ -21,19 +21,22 @@
       </tr>
     </thead>
     <tbody>
-        @foreach ($contactMessages as $key => $contact)
-            <tr>
-                <td>{{ $key+1 }}</td>
-                <td> {{ Str::title($contact->first_name) }} {{ Str::title($contact->last_name) }} </td>
-                <td>{{ $contact->email }}</td>
-                <td>{{ $contact->phone }}</td>
-                <td>{{ Str::title($contact->service->service_title) }}</td>
-                <td>{!! Str::wordWrap($contact->description, 20, '<br />') !!}</td>
-                <td>
-                    <a href="{{ route('delete.contact', [$contact->id]) }}" id="delete"  class="btn btn-inverse-danger">Delete</a>
-                </td>
-           </tr>
-        @endforeach
+    @foreach($contactMessages as $key => $contact)
+        <tr>
+            <td>{{ $key+1 }}</td>
+            <td> {{ Str::title($contact->first_name) }} {{ Str::title($contact->last_name) }} </td>
+            <td>{{ $contact->email }}</td>
+            <td>{{ $contact->phone }}</td>
+            <td>
+                {{ $contact->service ? $contact->service->service_title : 'N/A' }}
+            </td>
+            <td>{!! Str::wordWrap($contact->description, 20, '<br />') !!}</td>
+            <td>
+                <a href="{{ route('delete.contact', [$contact->id]) }}" id="delete" class="btn btn-inverse-danger">Delete</a>
+            </td>
+        </tr>
+    @endforeach
+
 
     </tbody>
   </table>

@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\backend\BlogPostController;
 use App\Http\Controllers\backend\CommentController;
+use App\Http\Controllers\backend\HeroController;
 use App\Http\Controllers\backend\PortfolioController;
 use App\Http\Controllers\backend\ResumeController;
 use App\Http\Controllers\backend\ServicesController;
+use App\Http\Controllers\backend\SiteSettingsController;
 use App\Http\Controllers\backend\SkillsController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\frontend\FrontendController;
@@ -26,37 +28,26 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
-//Route::middleware(['auth', 'verified', 'role:super admin'])->group(function () {
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::controller(BlogPostController::class)->group(function(){
-        Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'can:all post'])->name('all.post');
-        Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'can:add post'])->name('add.post');
-        Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'can:store post'])->name('store.post');
-        Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'can:edit post'])->name('edit.post');
-        Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'can:update post'])->name('update.post');
-        Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'can:delete post'])->name('delete.post');
-    });
+
+// Blog Posts
+Route::controller(BlogPostController::class)->group(function(){
+    Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'can:all post'])->name('all.post');
+    Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'can:add post'])->name('add.post');
+    Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'can:store post'])->name('store.post');
+    Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'can:edit post'])->name('edit.post');
+    Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'can:update post'])->name('update.post');
+    Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'can:delete post'])->name('delete.post');
 });
 
-//Route::middleware(['auth', 'verified', 'role:Super Admin'])->group(function () {
-//Route::prefix('admin')->as('admin.')->group(function (): void {
-//    Route::controller(BlogPostController::class)->group(function(){
-//        Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'can:all post'])->name('all.post');
-//        Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'can:add post'])->name('add.post');
-//        Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'can:store post'])->name('store.post');
-//
-////        Route::get('add-post', 'AddPost')->name('add.post');
-////        Route::post('store-post', 'StorePost')->name('store.post'); //The get method is not supported?
-//        Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'can:edit post'])->name('edit.post');
-//        Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'can:update post'])->name('update.post');
-//        Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'can:delete post'])->name('delete.post');
-//    });
+
+
+
+
+
+//Route::controller(CommentController::class)->group(function(){
+//    Route::post('user-comments', 'UserComments')->name('user.comments');
+//    Route::post('comment-status-update', 'CommentStatusUpdate')->name('comment.status.update');
 //});
-
-Route::controller(CommentController::class)->group(function(){
-    Route::post('user-comments', 'UserComments')->name('user.comments');
-    Route::post('comment-status-update', 'CommentStatusUpdate')->name('comment.status.update');
-});
 
 Route::middleware(['auth'])->group(function (): void {
     // Impersonations
@@ -71,9 +62,19 @@ Route::middleware(['auth'])->group(function (): void {
     Route::get('settings/locale', \App\Livewire\Settings\Locale::class)->name('settings.locale');
 
     // Admin
-    Route::middleware(['auth', 'verified', 'role:Super Admin'])->group(function () {
+    Route::middleware(['auth', 'verified', 'can:is-super-admin'])->group(function () {
         Route::get('/privateone', PrivateOne::class);
     });
+
+    // Hero section all routes
+    Route::controller(HeroController::class)->group(function(){
+        Route::get('here-section', 'HeroSection')->name('hero.section');
+//        Route::post('update-here-section', 'UpdateHeroSection')->name('update.hero.section');
+        Route::post('update-here-section', [HeroController::class, 'UpdateHeroSection'])->name('update.here.section');
+
+//        Route::post('update-here-section', 'HeroController@UpdateHeroSection')->name('update.here.section');
+    });
+
     // Services section all routes
     Route::controller(ServicesController::class)->group(function(){
         Route::get('all-services', 'AllServices')->name('all.services');
@@ -93,6 +94,7 @@ Route::middleware(['auth'])->group(function (): void {
         Route::post('update-work', 'UpdateWork')->name('update.work');
         Route::get('delete-word/{id}', 'DeleteWork')->name('delete.work');
     });
+
 
     // My Experience all routes
     Route::controller(ResumeController::class)->group(function(){
@@ -126,6 +128,24 @@ Route::middleware(['auth'])->group(function (): void {
         Route::get('delete-testimony/{id}', 'DeleteTestimony')->name('delete.testimony');
     });
 
+    // Comments section all routes
+    Route::controller(CommentController::class)->group(function(){
+        Route::get('user-comments', 'UserComments')->name('user.comments');
+        Route::post('comment-status-update', [CommentController::class, 'CommentStatusUpdate'])->name('comment.status.update');
+
+
+
+        // Contacts Message all routes
+        Route::get('contact-message', 'ContactMessage')->name('contact.message');
+        Route::get('delete-contact/{id}', 'DeleteContact')->name('delete.contact');
+    });
+
+    // Site Settings section all routes
+    Route::controller(SiteSettingsController::class)->group(function(){
+        Route::get('site-settings', 'SiteSettings')->name('site.settings');
+        Route::post('update-site-settings', 'UpdateSiteSettings')->name('update.site.settings');
+
+    });
 
     Route::prefix('admin')->as('admin.')->group(function (): void {
         Route::get('/', \App\Livewire\Admin\Index::class)->middleware(['auth', 'verified'])->name('index')->middleware('can:access dashboard');

@@ -100,7 +100,7 @@
                    <div class="tj-post__thumb">
                       <img src="{{asset($post->photo)}}" alt="" style="width: 1000px; height:400px;" />
 
-                      <a href="#" class="category">Tutorial</a>
+{{--                      <a href="#" class="category">Tutorial</a>--}}
                    </div>
 
                    <div class="tj-post__content">

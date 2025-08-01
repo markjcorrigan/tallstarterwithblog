@@ -1,0 +1,4 @@
+OK so this is the trick.
+
+You need to go into D-Link and then Port Forwarding then make sure that you assign the Computer.
+I.e. its a dropdown tab << Computer Name next to the Local IP when you edit the Port Forward item.

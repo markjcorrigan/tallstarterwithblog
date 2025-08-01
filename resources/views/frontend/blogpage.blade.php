@@ -10,8 +10,8 @@
    <title>{{ config('app.name') }} </title>
 
    <!-- Place favicon.ico in the root directory -->
-   <link rel="apple-touch-icon" href=" {{asset('frontend/assets/img/favicon.png')}} " />
-   <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/img/favicon.png')}}" />
+{{--   <link rel="apple-touch-icon" href=" {{asset('frontend/assets/img/favicon.png')}} " />--}}
+{{--   <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/img/favicon.png')}}" />--}}
 
    <!-- CSS here -->
    <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.min.css')}}" />
@@ -93,9 +93,9 @@
         @include('frontend.partials.blog')
       <!-- BLOG SECTION END -->
 
-      <!-- CONTACT SECTION START -->
-        @include('frontend.partials.contact')
-      <!-- CONTACT SECTION END -->
+{{--      <!-- CONTACT SECTION START -->--}}
+{{--        @include('frontend.partials.contact')--}}
+{{--      <!-- CONTACT SECTION END -->--}}
 
    </main>
 

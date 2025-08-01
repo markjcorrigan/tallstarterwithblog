@@ -28,12 +28,12 @@ class CreateSuperAdminCommand extends Command
     public function handle(): int
     {
         // ask if to proceed with creating a super admin
-        if (!$this->confirm('Do you want to create a super admin user?', true)) {
+        if (!$this->confirm('Do you want to create a user? You can confirm Super User at the end of this script', true)) {
             $this->info('Super admin creation skipped.');
             return CommandAlias::SUCCESS;
         }
 
-        $this->line('Create the first super admin user for your new application');
+        $this->line('Create the first user for your new application');
         // ask for the user's name
         $name = $this->ask('What is the users name?');
 
@@ -60,7 +60,7 @@ class CreateSuperAdminCommand extends Command
         }
 
         // output the user
-        $this->info('User created successfully. Now go and build something amazing!');
+        $this->info('Normal User or Super User created successfully. Now go and build something amazing!');
 
         return CommandAlias::SUCCESS;
     }

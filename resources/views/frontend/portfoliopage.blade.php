@@ -10,8 +10,8 @@
    <title>{{ config('app.name') }} </title>
 
    <!-- Place favicon.ico in the root directory -->
-   <link rel="apple-touch-icon" href=" {{asset('frontend/assets/img/favicon.png')}} " />
-   <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/img/favicon.png')}}" />
+{{--   <link rel="apple-touch-icon" href=" {{asset('frontend/assets/img/favicon.png')}} " />--}}
+{{--   <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/img/favicon.png')}}" />--}}
 
    <!-- CSS here -->
    <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.min.css')}}" />
@@ -65,25 +65,25 @@
    <!-- HEADER END -->
 
    <main class="site-content" id="content">
-{{--      <!-- HERO SECTION START -->--}}
-{{--        @include('frontend.partials.hero')--}}
-{{--      <!-- HERO SECTION END -->--}}
+      <!-- HERO SECTION START -->
+        @include('frontend.partials.hero')
+      <!-- HERO SECTION END -->
 
-{{--      <!-- SERVICES SECTION START -->--}}
-{{--        @include('frontend.partials.services')--}}
-{{--      <!-- SERVICES SECTION END -->--}}
+      <!-- SERVICES SECTION START -->
+        @include('frontend.partials.services')
+      <!-- SERVICES SECTION END -->
 
-{{--      <!-- PORTFOLIO SECTION START -->--}}
-{{--        @include('frontend.partials.portfolio')--}}
-{{--      <!-- PORTFOLIO SECTION END -->--}}
+      <!-- PORTFOLIO SECTION START -->
+        @include('frontend.partials.portfolio')
+      <!-- PORTFOLIO SECTION END -->
 
       <!-- RESUME SECTION START -->
         @include('frontend.partials.resume')
       <!-- RESUME SECTION END -->
 
-{{--      <!-- SKILLS SECTION START -->--}}
-{{--        @include('frontend.partials.skills')--}}
-{{--      <!-- SKILLS SECTION END -->--}}
+      <!-- SKILLS SECTION START -->
+        @include('frontend.partials.skills')
+      <!-- SKILLS SECTION END -->
 
 {{--      <!-- TESTIMONIAL SECTION START -->--}}
 {{--        @include('frontend.partials.testimonial')--}}

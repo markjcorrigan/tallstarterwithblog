@@ -5,8 +5,11 @@
     <div class="card">
         <div class="card-body">
             <h6 class="card-title">Edit Hero Section</h6>
-                <form method="POST" action="{{ route('update.hero.section') }}" enctype="multipart/form-data">
-                    @csrf
+{{--                <form method="POST" action="{{ route('update.hero.section') }}" enctype="multipart/form-data">--}}
+            <form action="{{ route('update.here.section') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                @csrf
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="mb-3">
@@ -44,7 +47,7 @@
                                 <input type="text" class="form-control" name="twitter_url" value="{{ $hero->twitter_url }}">
                             </div>
                         </div><!-- Col -->
-                       
+
                         <div class="col-sm-3">
                             <div class="mb-3">
                                 <label class="form-label">Youtube URL</label>
@@ -65,7 +68,7 @@
                                 <input type="text" class="form-control" name="github_url" value="{{ $hero->github_url }}">
                             </div>
                         </div><!-- Col -->
-                       
+
                     </div><!-- Row -->
                     <div class="row">
                         <div class="col-sm-4">
@@ -102,11 +105,11 @@
                                 <textarea class="form-control" name="short_description" rows="3">{{ $hero->short_description }}</textarea>
                             </div>
                         </div><!-- Col -->
-                       
+
                     </div><!-- Row -->
                     <button type="submit" class="btn btn-primary submit">Update Hero Section</button>
                 </form>
-                
+
         </div>
     </div>
 </div>

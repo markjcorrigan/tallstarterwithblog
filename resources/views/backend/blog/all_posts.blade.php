@@ -1,4 +1,3 @@
-@can('access blog')
 @extends('admin.admin_dashboard')
 @section('admin')
 
@@ -42,5 +41,5 @@
 </div>
 
 @endsection
-@endcan
+
 
