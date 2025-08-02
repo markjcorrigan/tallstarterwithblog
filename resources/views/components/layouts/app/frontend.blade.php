@@ -5,10 +5,38 @@
 </head>
 <body class="min-h-screen bg-white dark:bg-zinc-800">
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        position: relative;
+    }
+
+
 
     .custom-button:focus {
-        background-color: #f0f0f0 !important; /* light gray background color */
+        background-color: #808080 !important; /* light gray background color */
     }
+
+    .footer-bg {
+        background-color: #343a40 !important;;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding-bottom: 80px; /* Add some padding to the bottom */
+    }
+
+    .content {
+        padding-bottom: 600px; /* Increase the padding to match the footer height */
+    }
+
+
+
 </style>
 {{--<flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">--}}
 {{--    <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>--}}
@@ -212,21 +240,28 @@
 
 
 
-<flux:main container class="flex flex-col min-h-screen w-full justify-between">
-    <div>
+
+<flux:main>
+    <div class="content" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         {{ $slot }}
     </div>
-</flux:main>
-<flux:footer container class="flex flex-col min-h-screen w-full justify-between bg-dark">
-    <fluxfooter class="footer h-300 py-4 bg-dark text-white-50 w-full">
+    <flux:footer class="footer footer-bg">
         @include('partials.footer')
-    </fluxfooter>
     </flux:footer>
+</flux:main>
 
 
 
 
-{{--w-full bottom-0 left-0 right-0"--}}
+
+
+
+
+
+
+
+
+
 
 
 

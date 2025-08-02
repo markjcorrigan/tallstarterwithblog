@@ -11,12 +11,11 @@
 
 {{--<footer class="footer py-4 bg-dark text-white-50">--}}
 {{--    <footer class="footer py-4 bg-dark text-white-50">--}}
-<div class="container text-center">
+<div class="text-center footer-bg" style="background-color: #your-color;">
+
     <div class="row">
         <div class="col-md-6">
-            @if(isset($siteSettings))
-                <p>&copy; {{ $siteSettings->footer_note }}</p>
-            @endif
+
             <p style="text-align:center" class="text-white">Project &amp; Process Management <span lang="en-za">Best Practice</span> <br>at CM Level 2 and above</p>
             <p align="center">
                 <a href="/gamestats" target="_blank">
@@ -26,7 +25,12 @@
             <p style="text-align:center" class="text-white">underpinned by ITIL</p>
         </div>
         <div class="col-md-3"></div>
-        <div class="col-md-3 text-right small align-self-end text-white">2009 PMWay<br><small>People Process Technology Governance Execution</small></div>
+        <div class="col-md-3 text-right small align-self-end text-white pe-3">
+            @if(isset($siteSettings))
+                <p>&copy; 2009 {{ $siteSettings->footer_note }}</p>
+            @endif<br><small>People Process Technology Governance Execution</small>
+        </div>
+
     </div>
 
 </div>

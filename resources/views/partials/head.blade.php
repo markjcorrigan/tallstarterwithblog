@@ -16,7 +16,7 @@
 
 
 
-<link rel="stylesheet" href="{{ asset('bootstrapfourfivetwo/css/bootstrap.css') }}" />
+{{--<link rel="stylesheet" href="{{ asset('bootstrapfourfivetwo/css/bootstrap.css') }}" />--}}
 <link rel="stylesheet" href="{{ asset('fontawesome6/css/all.css') }}" >
 {{--<link rel="stylesheet" href="{{ asset('bootstrapfourthreeone/css/jquery-ui.css') }}">--}}
 {{--<link rel="stylesheet" href="{{ asset('css/styles.css') }}">--}}
