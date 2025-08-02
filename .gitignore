@@ -2,6 +2,12 @@
 /node_modules
 /public/build
 /public/hot
+/public/itiloverview
+/public/fontawesome6
+/public/bootstrapfourfivetwo
+/public/bootstrapfouroneone
+/public/bootstrapfourthreeone
+/public/images
 /public/storage
 /storage/*.key
 /storage/pail

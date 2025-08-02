@@ -4,8 +4,7 @@
           <div class="col-lg-5">
              <div class="section-header">
                 <h2 class="section-title wow fadeInLeft" data-wow-delay=".3s">My Client's Stories</h2>
-                <p class="wow fadeInLeft" data-wow-delay=".4s">Empowering people in new a digital journey with my
-                   super services</p>
+                <p class="wow fadeInLeft" data-wow-delay=".4s">An idea of the many services I have on offer</p>
              </div>
           </div>
           @php
@@ -55,13 +54,13 @@
                               </svg>
                            </div>
                            <p class="quote">“{{ $testimony->testimony }}</p>
-                        
+
                         </div>
                     @endforeach
-                  @else 
+                  @else
                      <p>No Testimony found!! 😌😌</p>
                   @endunless
-                   
+
 
                 </div>
              </div>

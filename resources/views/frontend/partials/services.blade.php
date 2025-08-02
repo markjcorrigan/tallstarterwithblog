@@ -5,8 +5,7 @@
              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Quality Services</h2>
                 <p class="wow fadeInUp" data-wow-delay=".4s">
-                   We put your ideas and thus your wishes in the form of a unique web project that inspires you and
-                   you customers.
+                   I have a range of services that I offer
                 </p>
              </div>
           </div>
@@ -19,7 +18,7 @@
        <div class="row">
           <div class="col-md-12">
              <div class="services-widget position-relative">
-               
+
                @unless (count($services) == 0)
                   @foreach ($services as $key => $service)
                      <div class="service-item current d-flex flex-wrap align-items-center wow fadeInUp"
@@ -40,7 +39,7 @@
                @else
                      <p>No Service found! 😌😌</p>
                @endunless
-                
+
 
                 <div class="active-bg wow fadeInUp" data-wow-delay=".5s"></div>
              </div>

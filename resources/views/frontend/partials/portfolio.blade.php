@@ -9,8 +9,7 @@
              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Recent Works</h2>
                 <p class="wow fadeInUp" data-wow-delay=".4s">
-                   We put your ideas and thus your wishes in the form of a unique web project that inspires you and
-                   you customers.
+                   I have run hundreds of successful projects
                 </p>
              </div>
           </div>
@@ -47,7 +46,7 @@
                      </a>
                   </div>
                 @endforeach
-                
+
              </div>
           </div>
        </div>

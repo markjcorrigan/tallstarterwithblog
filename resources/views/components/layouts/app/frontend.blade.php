@@ -4,6 +4,12 @@
     @include('partials.head')
 </head>
 <body class="min-h-screen bg-white dark:bg-zinc-800">
+<style>
+
+    .custom-button:focus {
+        background-color: #f0f0f0 !important; /* light gray background color */
+    }
+</style>
 {{--<flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">--}}
 {{--    <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>--}}
 
@@ -16,9 +22,15 @@
 
 
     <flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
-        <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>
-        <a href="{{ route('home') }}" class="ml-2 mr-5 flex items-center space-x-2 lg:ml-0">
-            {{--        <x-app-logo class="size-8" href="#"></x-app-logo>--}}<img src="{{ asset('images/hometransparent.png') }}" alt="logo" class="w-10 h-10">    </a>
+{{--        <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>--}}
+        <a href="{{ route('home') }}" class="nav-link">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+    <path d="M 88.273 26.047 L 49.746 1.384 c -2.883 -1.846 -6.61 -1.845 -9.493 0 L 1.728 26.047 c -1.251 0.801 -1.811 2.297 -1.394 3.722 c 0.417 1.426 1.695 2.383 3.181 2.383 h 5.487 v 50.069 c 0 4.289 3.489 7.779 7.778 7.779 h 22.442 C 43.511 90 47 86.511 47 82.221 v -8.748 l 0.81 0.854 c 0.394 0.414 0.922 0.623 1.451 0.623 c 0.494 0 0.989 -0.182 1.377 -0.549 c 0.801 -0.761 0.834 -2.026 0.074 -2.828 l -4.261 -4.491 c -0.006 -0.007 -0.014 -0.011 -0.02 -0.017 c -0.363 -0.373 -0.869 -0.606 -1.431 -0.606 c -0.563 0 -1.07 0.235 -1.433 0.609 c -0.005 0.006 -0.012 0.009 -0.018 0.015 l -4.26 4.491 c -0.76 0.801 -0.727 2.067 0.075 2.827 c 0.802 0.762 2.067 0.727 2.828 -0.075 L 43 73.472 v 8.749 C 43 84.304 41.305 86 39.222 86 H 16.78 c -2.083 0 -3.778 -1.695 -3.778 -3.779 V 30.152 c 0 -1.105 -0.896 -2 -2 -2 H 5.859 L 42.41 4.753 c 1.573 -1.007 3.606 -1.007 5.18 0 l 36.552 23.399 h -5.144 c -1.105 0 -2 0.896 -2 2 v 52.069 c 0 2.083 -1.694 3.779 -3.778 3.779 h -9.109 c -2.083 0 -3.779 -1.695 -3.779 -3.779 V 54.619 c 0 -4.288 -3.489 -7.778 -7.778 -7.778 h -15.11 c -4.289 0 -7.778 3.489 -7.778 7.778 v 24.345 c 0 1.105 0.896 2 2 2 s 2 -0.896 2 -2 V 54.619 c 0 -2.083 1.695 -3.778 3.778 -3.778 h 15.11 c 2.083 0 3.778 1.694 3.778 3.778 v 27.602 c 0 4.289 3.489 7.779 7.779 7.779 h 9.109 c 4.288 0 7.778 -3.489 7.778 -7.779 V 32.152 h 5.488 c 1.485 0 2.764 -0.958 3.181 -2.384 C 90.083 28.343 89.524 26.847 88.273 26.047 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg>
+        </a>
+
 
         <!-- existing code -->
         <flux:spacer/>
@@ -28,13 +40,16 @@
         <flux:spacer/>
         <flux:spacer/>
         @guest
-            <flux:navbar.item href="{{ route('portfolio') }}" :current="request()->routeIs('portfolio')"> Portfolio </flux:navbar.item>
-{{--            <flux:navbar.item href="{{ route('blog') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>--}}
-            <flux:navbar.item href="{{ route('blog') }}" :current="request()->routeIs('blog')"> Blog </flux:navbar.item>
-            <flux:navbar.item href="{{ route('contact') }}" :current="request()->routeIs('contact')"> Contact </flux:navbar.item>
+            <flux:navbar.item class="text-black" style="color: black !important" href="{{ route('portfolio') }}" :current="request()->routeIs('portfolio')">
+                Portfolio
+            </flux:navbar.item>
+
+            {{--            <flux:navbar.item href="{{ route('blog') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>--}}
+            <flux:navbar.item class="text-black" style="color: black  !important" href="{{ route('blog') }}" :current="request()->routeIs('blog')"> Blog </flux:navbar.item>
+            <flux:navbar.item class="text-black" style="color: black  !important" href="{{ route('contact') }}" :current="request()->routeIs('contact')"> Contact </flux:navbar.item>
         @endguest
         @auth
-            <flux:navbar.item href="{{ route('all.post') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>
+            <flux:navbar.item class="text-black" style="color: black" href="{{ route('all.post') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>
         @endauth
 
         <!-- existing code -->
@@ -65,15 +80,17 @@
     @if (Route::has('login'))
         <nav class="flex items-center justify-end gap-4">
             @guest
-                <flux:button href="{{ route('login') }}" variant="primary">
+                <flux:button href="{{ route('login') }}" variant="primary" class="custom-button" style="color: black !important">
                     {{ __('global.log_in') }}
                 </flux:button>
-                @if (Route::has('register'))
-                    <flux:button href="{{ route('register') }}">
+
+            @if (Route::has('register'))
+                    <flux:button href="{{ route('register') }}" style="color: black !important">
                         {{ __('global.register') }}
                     </flux:button>
                 @endif
             @endguest
+
         </nav>
     @endif
     {{--            <flux:navbar class="mr-1.5 space-x-0.5 py-0!">--}}
@@ -193,20 +210,27 @@
 
 </flux:sidebar>
 
-<flux:main container class="flex flex-col">
-    <div class="">
+
+
+<flux:main container class="flex flex-col min-h-screen w-full justify-between">
+    <div>
         {{ $slot }}
     </div>
-
-    @include('partials.footer')
 </flux:main>
+<flux:footer container class="flex flex-col min-h-screen w-full justify-between bg-dark">
+    <fluxfooter class="footer h-300 py-4 bg-dark text-white-50 w-full">
+        @include('partials.footer')
+    </fluxfooter>
+    </flux:footer>
 
 
 
 
+{{--w-full bottom-0 left-0 right-0"--}}
 
 
 
 @fluxScripts
 </body>
+
 </html>

@@ -31,12 +31,12 @@ Route::get('/contact', function () {
 
 // Blog Posts
 Route::controller(BlogPostController::class)->group(function(){
-    Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'can:all post'])->name('all.post');
-    Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'can:add post'])->name('add.post');
-    Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'can:store post'])->name('store.post');
-    Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'can:edit post'])->name('edit.post');
-    Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'can:update post'])->name('update.post');
-    Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'can:delete post'])->name('delete.post');
+    Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'permission:all post'])->name('all.post');
+    Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'permission:add post'])->name('add.post');
+    Route::post('store-post', 'StorePost')->middleware(['auth', 'verified', 'permission:store post'])->name('store.post');
+    Route::get('edit-post/{id}', 'EditPost')->middleware(['auth', 'verified', 'permission:edit post'])->name('edit.post');
+    Route::post('update-post/{id}', 'UpdatePost')->middleware(['auth', 'verified', 'permission:update post'])->name('update.post');
+    Route::get('delete-post/{id}', 'DeletePost')->middleware(['auth', 'verified', 'permission:delete post'])->name('delete.post');
 });
 
 
@@ -51,7 +51,7 @@ Route::controller(BlogPostController::class)->group(function(){
 
 Route::middleware(['auth'])->group(function (): void {
     // Impersonations
-    Route::post('/impersonate/{user}', [\App\Http\Controllers\ImpersonationController::class, 'store'])->name('impersonate.store')->middleware('can:impersonate');
+    Route::post('/impersonate/{user}', [\App\Http\Controllers\ImpersonationController::class, 'store'])->name('impersonate.store')->middleware('permission:impersonate');
     Route::delete('/impersonate/stop', [\App\Http\Controllers\ImpersonationController::class, 'destroy'])->name('impersonate.destroy');
 
     // Settings
@@ -62,88 +62,91 @@ Route::middleware(['auth'])->group(function (): void {
     Route::get('settings/locale', \App\Livewire\Settings\Locale::class)->name('settings.locale');
 
     // Admin
-    Route::middleware(['auth', 'verified', 'can:is-super-admin'])->group(function () {
+//    Route::middleware(['auth', 'verified', 'can:is-super-admin'])->group(function () {
+//        Route::get('/privateone', PrivateOne::class);
+//    });
+        Route::middleware(['auth', 'verified', 'role:Super Admin'])->group(function () {
         Route::get('/privateone', PrivateOne::class);
     });
 
     // Hero section all routes
     Route::controller(HeroController::class)->group(function(){
-        Route::get('here-section', 'HeroSection')->name('hero.section');
+        Route::get('here-section', 'HeroSection')->name('hero.section')->middleware(['auth', 'verified', 'permission:all hero']);
 //        Route::post('update-here-section', 'UpdateHeroSection')->name('update.hero.section');
-        Route::post('update-here-section', [HeroController::class, 'UpdateHeroSection'])->name('update.here.section');
+        Route::post('update-here-section', [HeroController::class, 'UpdateHeroSection'])->name('update.here.section')->middleware(['auth', 'verified', 'permission:update hero']);
 
 //        Route::post('update-here-section', 'HeroController@UpdateHeroSection')->name('update.here.section');
     });
 
     // Services section all routes
     Route::controller(ServicesController::class)->group(function(){
-        Route::get('all-services', 'AllServices')->name('all.services');
-        Route::get('add-service', 'AddService')->name('add.service');
-        Route::post('store-service', 'StoreService')->name('store.service');
-        Route::get('edit-service/{id}', 'EditService')->name('edit.service');
-        Route::post('update-service', 'UpdateService')->name('update.service');
-        Route::get('delete-service/{id}', 'DeleteService')->name('delete.service');
+        Route::get('all-services', 'AllServices')->name('all.services')->middleware(['auth', 'verified', 'permission:all service']);
+        Route::get('add-service', 'AddService')->name('add.service')->middleware(['auth', 'verified', 'permission:add service']);
+        Route::post('store-service', 'StoreService')->name('store.service')->middleware(['auth', 'verified', 'permission:store service']);
+        Route::get('edit-service/{id}', 'EditService')->name('edit.service')->middleware(['auth', 'verified', 'permission:edit service']);
+        Route::post('update-service', 'UpdateService')->name('update.service')->middleware(['auth', 'verified', 'permission:update service']);
+        Route::get('delete-service/{id}', 'DeleteService')->name('delete.service')->middleware(['auth', 'verified', 'permission:delete service']);
     });
 
     // Portfolio/Recent works section all routes
     Route::controller(PortfolioController::class)->group(function(){
-        Route::get('all-recent-works', 'AllRecentWorks')->name('all.recent.works');
-        Route::get('all-work', 'AddWork')->name('add.work');
-        Route::post('store-work', 'StoreWork')->name('store.work');
-        Route::get('edit-word/{id}', 'EditWork')->name('edit.work');
-        Route::post('update-work', 'UpdateWork')->name('update.work');
-        Route::get('delete-word/{id}', 'DeleteWork')->name('delete.work');
+        Route::get('all-recent-works', 'AllRecentWorks')->name('all.recent.works')->middleware(['auth', 'verified', 'permission:all work']);
+        Route::get('all-work', 'AddWork')->name('add.work')->middleware(['auth', 'verified', 'permission:add work']);
+        Route::post('store-work', 'StoreWork')->name('store.work')->middleware(['auth', 'verified', 'permission:store work']);
+        Route::get('edit-word/{id}', 'EditWork')->name('edit.work')->middleware(['auth', 'verified', 'permission:edit work']);
+        Route::post('update-work', 'UpdateWork')->name('update.work')->middleware(['auth', 'verified', 'permission:update work']);
+        Route::get('delete-word/{id}', 'DeleteWork')->name('delete.work')->middleware(['auth', 'verified', 'permission:delete work']);
     });
 
 
     // My Experience all routes
     Route::controller(ResumeController::class)->group(function(){
-        Route::get('my-experience', 'MyExperience')->name('my.experience');
-        Route::post('store-experience', 'StoreExperience')->name('store.experience');
-        Route::get('edit-experience/{id}', 'EditExperience');
-        Route::post('update-experience', 'UpdateExperience')->name('update.experience');
-        Route::get('delete-experience/{id}', 'DeleteExperience')->name('delete.experience');
+        Route::get('my-experience', 'MyExperience')->name('my.experience')->middleware(['auth', 'verified', 'permission:all experience']);
+        Route::post('store-experience', 'StoreExperience')->name('store.experience')->middleware(['auth', 'verified', 'permission:store experience']);
+        Route::get('edit-experience/{id}', 'EditExperience')->middleware(['auth', 'verified', 'permission:edit experience']);
+        Route::post('update-experience', 'UpdateExperience')->name('update.experience')->middleware(['auth', 'verified', 'permission:update experience']);
+        Route::get('delete-experience/{id}', 'DeleteExperience')->name('delete.experience')->middleware(['auth', 'verified', 'permission:delete experience']);
 
         // My Education route
-        Route::get('my-education', 'MyEducation')->name('my.education');
+        Route::get('my-education', 'MyEducation')->name('my.education')->middleware(['auth', 'verified', 'permission:all education']);
     });
 
     // My skills section all routes
     Route::controller(SkillsController::class)->group(function(){
-        Route::get('add-skill', 'AddSkill')->name('add.skill');
-        Route::post('store-skill', 'StoreSkill')->name('store.skill');
-        Route::get('all-skills', 'AllSkills')->name('all.skills');
-        Route::get('edit-skill/{id}', 'EditSkill')->name('edit.skill');
-        Route::post('update-skill', 'UpdateSkill')->name('update.skill');
-        Route::get('delete-skill/{id}', 'DeleteSkill')->name('delete.skill');
+        Route::get('add-skill', 'AddSkill')->name('add.skill')->middleware(['auth', 'verified', 'permission:add skill']);
+        Route::post('store-skill', 'StoreSkill')->name('store.skill')->middleware(['auth', 'verified', 'permission:store skill']);
+        Route::get('all-skills', 'AllSkills')->name('all.skills')->middleware(['auth', 'verified', 'permission:all skill']);
+        Route::get('edit-skill/{id}', 'EditSkill')->name('edit.skill')->middleware(['auth', 'verified', 'permission:edit skill']);
+        Route::post('update-skill', 'UpdateSkill')->name('update.skill')->middleware(['auth', 'verified', 'permission:update skill']);
+        Route::get('delete-skill/{id}', 'DeleteSkill')->name('delete.skill')->middleware(['auth', 'verified', 'permission:delete skill']);
     });
 
     // Testimonial section all routes
     Route::controller(TestimonialController::class)->group(function(){
-        Route::get('add-testimony', 'AddTestimony')->name('add.testimony');
-        Route::post('store-testimony', 'StoreTestimony')->name('store.testimony');
-        Route::get('all-testimoies', 'AllTestimonies')->name('all.testimoies');
-        Route::get('edit-testimony/{id}', 'EditTestimony')->name('edit.testimony');
-        Route::post('update-testimony', 'UpdateTestimony')->name('update.testimony');
-        Route::get('delete-testimony/{id}', 'DeleteTestimony')->name('delete.testimony');
+        Route::get('add-testimony', 'AddTestimony')->name('add.testimony')->middleware(['auth', 'verified', 'permission:add testimony']);
+        Route::post('store-testimony', 'StoreTestimony')->name('store.testimony')->middleware(['auth', 'verified', 'permission:store testimony']);
+        Route::get('all-testimoies', 'AllTestimonies')->name('all.testimoies')->middleware(['auth', 'verified', 'permission:all testimony']);
+        Route::get('edit-testimony/{id}', 'EditTestimony')->name('edit.testimony')->middleware(['auth', 'verified', 'permission:edit testimony']);
+        Route::post('update-testimony', 'UpdateTestimony')->name('update.testimony')->middleware(['auth', 'verified', 'permission:update testimony']);
+        Route::get('delete-testimony/{id}', 'DeleteTestimony')->name('delete.testimony')->middleware(['auth', 'verified', 'permission:delete testimony']);
     });
 
     // Comments section all routes
     Route::controller(CommentController::class)->group(function(){
         Route::get('user-comments', 'UserComments')->name('user.comments');
-        Route::post('comment-status-update', [CommentController::class, 'CommentStatusUpdate'])->name('comment.status.update');
+        Route::post('comment-status-update', [CommentController::class, 'CommentStatusUpdate'])->name('comment.status.update')->middleware(['auth', 'verified', 'permission:update comment']);
 
 
 
         // Contacts Message all routes
-        Route::get('contact-message', 'ContactMessage')->name('contact.message');
-        Route::get('delete-contact/{id}', 'DeleteContact')->name('delete.contact');
+        Route::get('contact-message', 'ContactMessage')->name('contact.message')->middleware(['auth', 'verified', 'permission:all contact']);
+        Route::get('delete-contact/{id}', 'DeleteContact')->name('delete.contact')->middleware(['auth', 'verified', 'permission:delete contact']);
     });
 
     // Site Settings section all routes
     Route::controller(SiteSettingsController::class)->group(function(){
-        Route::get('site-settings', 'SiteSettings')->name('site.settings');
-        Route::post('update-site-settings', 'UpdateSiteSettings')->name('update.site.settings');
+        Route::get('site-settings', 'SiteSettings')->name('site.settings')->middleware(['auth', 'verified', 'permission:all setting']);
+        Route::post('update-site-settings', 'UpdateSiteSettings')->name('update.site.settings')->middleware(['auth', 'verified', 'permission:update setting']);
 
     });
 

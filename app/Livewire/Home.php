@@ -1,16 +1,29 @@
 <?php
 
+
 namespace App\Livewire;
 
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use App\Models\SiteSettings;
 
 class Home extends Component
 {
-    #[Layout('components.layouts.app')]
-    public function render(): View
+    public $siteSettings;
+
+    public function mount()
     {
-        return view('livewire.home');
+        $this->siteSettings = SiteSettings::first(); // or SiteSettings::all() depending on your needs
     }
+
+    #[Layout('components.layouts.app.frontend')]
+    public function render()
+    {
+        return view('livewire.home')
+            ->layoutData(['siteSettings' => $this->siteSettings]);
+    }
+
 }
+
+

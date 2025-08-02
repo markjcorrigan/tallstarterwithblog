@@ -5,8 +5,7 @@
              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Skills</h2>
                 <p class="wow fadeInUp" data-wow-delay=".4s">
-                   We put your ideas and thus your wishes in the form of a unique web project that inspires you and
-                   you customers.
+                   I have many skills to bring to your party
                 </p>
              </div>
           </div>
@@ -32,7 +31,7 @@
                         <p>{{ $skill->technology_name }}</p>
                      </div>
                   @endforeach
-               @else 
+               @else
                   <p>No Skill found!! 😌😌</p>
                @endunless
 

@@ -59,7 +59,7 @@
              <div class="col-6 col-lg-3">
                 <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
                    <div class="number"><span class="odometer" data-count="{{ $hero->PC }}">0</span>+</div>
-                   <div class="text">Project <br />Completed</div>
+                   <div class="text">Projects <br />Completed</div>
                 </div>
              </div>
              <div class="col-6 col-lg-3">
