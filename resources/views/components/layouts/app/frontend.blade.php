@@ -3,41 +3,43 @@
 <head>
     @include('partials.head')
 </head>
-<body class="min-h-screen bg-white dark:bg-zinc-800">
+<body class="min-h-screen bg-white dark:bg-zinc-800" >
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        position: relative;
-    }
+
+    /*.footer-bg {*/
+    /*    background-color: #212529 !important;*/
+    /*}*/
+
+
+
+    /*flux-header {*/
+    /*    position: relative;*/
+    /*    z-index: 1;*/
+    /*    top: 0;*/
+    /*    margin-top: 0;*/
+    /*    padding-top: 0;*/
+    /*}*/
 
 
 
     .custom-button:focus {
-        background-color: #808080 !important; /* light gray background color */
+        background-color: #212529 !important; /* light gray background color */
     }
 
-    .footer-bg {
-        background-color: #343a40 !important;;
+    .custom-button:hover {
+        background-color: transparent; /* or any other color you want */
+        color: #000; /* black text color */
+
     }
 
-    .footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding-bottom: 80px; /* Add some padding to the bottom */
-    }
-
-    .content {
-        padding-bottom: 600px; /* Increase the padding to match the footer height */
-    }
+    /*.content {*/
+    /*    padding-bottom: 300px; !* Increase the padding to match the footer height *!*/
+    /*}*/
 
 
 
 </style>
+
 {{--<flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">--}}
 {{--    <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>--}}
 
@@ -49,7 +51,8 @@
 
 
 
-    <flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
+<flux:header class="w-full flex justify-center px-4 py-2 bg-gray-100 shadow-md">
+
 {{--        <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>--}}
         <a href="{{ route('home') }}" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
@@ -108,12 +111,14 @@
     @if (Route::has('login'))
         <nav class="flex items-center justify-end gap-4">
             @guest
-                <flux:button href="{{ route('login') }}" variant="primary" class="custom-button" style="color: black !important">
+                <flux:button href="{{ route('login') }}" variant="primary"  class="custom-button"
+                >
                     {{ __('global.log_in') }}
                 </flux:button>
 
             @if (Route::has('register'))
-                    <flux:button href="{{ route('register') }}" style="color: black !important">
+                    <flux:button href="{{ route('register') }}" variant="primary"  class="custom-button"
+                    >
                         {{ __('global.register') }}
                     </flux:button>
                 @endif
@@ -240,26 +245,18 @@
 
 
 
+<div style="position: relative; min-height: 100vh;">
 
-<flux:main>
-    <div class="content" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        {{ $slot }}
-    </div>
-    <flux:footer class="footer footer-bg">
+
+    <flux:main container style="padding-bottom: 550px; padding-top: 60px;">
+        <div>
+            {{ $slot }}
+        </div>
+    </flux:main>
+    <flux:footer style="position: absolute; bottom: 0; left: 0; width: 100%; margin: 0; padding: 0;">
         @include('partials.footer')
     </flux:footer>
-</flux:main>
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 

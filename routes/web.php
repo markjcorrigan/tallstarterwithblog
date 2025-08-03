@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\SkillsController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Livewire\PrivateOne;
+use App\Livewire\Laws;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Livewire\Home::class)->name('home');
@@ -68,6 +69,10 @@ Route::middleware(['auth'])->group(function (): void {
         Route::middleware(['auth', 'verified', 'role:Super Admin'])->group(function () {
         Route::get('/privateone', PrivateOne::class);
     });
+
+    Route::get('/laws', Laws::class);
+
+
 
     // Hero section all routes
     Route::controller(HeroController::class)->group(function(){

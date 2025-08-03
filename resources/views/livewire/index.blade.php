@@ -3,30 +3,30 @@
 
     <div class="container" align="center">
         <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
-        <link rel="stylesheet" href="/bootstrapfourfivetwo/css/bootstrap.css" />
+{{--        <link rel="stylesheet" href="/bootstrapfourfivetwo/css/bootstrap.css" />--}}
 
         <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
 
         <!--<link rel="stylesheet" href="/fontawesome/fontawesome-pro-5.13.0-web/css/all.css" >-->
         <link rel="stylesheet" href="/fontawesome6/css/all.css" >
-        <link rel="stylesheet" href="/bootstrapfourthreeone/css/jquery-ui.css">
-        <link rel="stylesheet" href="/css/styles.css">
+{{--        <link rel="stylesheet" href="/bootstrapfourthreeone/css/jquery-ui.css">--}}
+{{--        <link rel="stylesheet" href="/css/styles.css">--}}
 
         <style>
-            /* Make the image fully responsive */
+{{--            /* Make the image fully responsive */--}}
 
-            body {
-                /*     background-color: #c2e8fc !important; */
-            }
+{{--            body {--}}
+{{--                /*     background-color: #c2e8fc !important; */--}}
+{{--            }--}}
 
-            .customcolor {
-                /*  background-color: #c2e8fc !important; */
-                background-color: #fff !important;
-            }
+{{--            .customcolor {--}}
+{{--                /*  background-color: #c2e8fc !important; */--}}
+{{--                background-color: #fff !important;--}}
+{{--            }--}}
 
-            .customcolorwhite {
-                background-color: #fff !important;
-            }
+{{--            .customcolorwhite {--}}
+{{--                background-color: #fff !important;--}}
+{{--            }--}}
 
 
 
@@ -124,7 +124,7 @@
         </div>
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn align-center clearfix" type="button" data-toggle="collapse" data-target="#collapseperformancestats" aria-expanded="false" aria-controls="collapseperformancestats"><img alt="Animated GIF of Cogs going around and around to illustrate the idea of processes working together" height="50" src="/images/cogsworking.gif" width="73" title="Click on the cogs to understand about upping your production stats">
+            <button class="btn align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapseperformancestats" aria-expanded="false" aria-controls="collapseperformancestats"><img alt="Animated GIF of Cogs going around and around to illustrate the idea of processes working together" height="50" src="/images/cogsworking.gif" width="73" title="Click on the cogs to understand about upping your production stats">
             </button>
 
             <div class="collapse" id="collapseperformancestats">
@@ -199,21 +199,13 @@
             <br>
 
 
-            <button class="btn align-center clearfix" type="button" data-toggle=
-                "collapse" data-target="#collapseperformancestats111" aria-expanded="false" aria-controls=
-                        "collapseperformancestats">		 <div class="rTable">
-                    <div class="rTableBody">
-                        <div class="rTableRow">
-                            <div class="rTableCell"></div>
-                            <div class="rTableCell" align="center"><img class="img-fluid" src="/images/itilvaluestreams.png" >
-                            </div>
-                            <div class="rTableCell"></div>
-                        </div>
-                    </div>
+            <button class="btn align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapseperformancestats111" aria-expanded="false" aria-controls="collapseperformancestats111">
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid" src="/images/itilvaluestreams.png">
                 </div>
-
-
             </button>
+
+
             <br>
             <br>
 
@@ -239,8 +231,8 @@
                                     firmly in place</a>; reach higher. </p>
                             <p><a href="/?slide=2" target="_blank">Connect the dots here</a> to see touchpoints on your journey towards success.</p>
 
-                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                "collapse" data-target="#collapsemorestuffs" aria-expanded="false" aria-controls=
+                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+                                "collapse" data-bs-target="#collapsemorestuffs" aria-expanded="false" aria-controls=
                                         "collapsemorestuffs">More Information?</button>
 
                             <div class="collapse" id="collapsemorestuffs">
@@ -304,117 +296,82 @@
 
                 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
                 <a href="/cmmi"  title="Click the gateway to the right of this pin.  Now, on a Desktop drag the pin down to your Capability Maturity level.  Is it CM L1, L2, L3 etc.  I.e. what processes have you pinned down and have control over. You can also click on the target to the right of the gateway for CM process details for software engineering / software development.  Bottom line: Focus on the process and not the outcome of the process!  If you cannot describe what you are doing as a process you do not know what you are doing! " ><img id="pin" class="img-fluid" style="z-index:100"  src="/images/pinsmaller.png" alt="pin" ></a>
-                <button class="btn align-center clearfix" type="button" data-toggle=
-                    "collapse" data-target="#collapsecapmatlvl" aria-expanded="false" aria-controls=
-                            "collapsecapmatlvl">		 <div class="rTable">
-                        <div class="rTableBody">
-                            <div class="rTableRow">
-                                <div class="rTableCell"></div>
-                                <div class="rTableCell"><img alt="" title="Click the gateway to see why Capability Maturity Level 2 is where you have to be in order to up your game stats and also to stop the chaos.  CM Level 2 is the firm base needed for CM L3, 4 and 5!" class="img-fluid" src="/images/gatewayflat.png" onmouseover="this.src='/images/gateway.png'" onmouseout="this.src='/images/gatewayflat.png'"></div>
-                                <div class="rTableCell"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </button><a href="/?slide=5"><img id="target" class="img-fluid" title="Click the target for the project management and other processes to maintain and improve up to Capability Maturity Level 5" src="/images/targetsmall.png" alt="target" ></a>
-
-
+                <button class="btn text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapsecapmatlvl" aria-expanded="false" aria-controls="collapsecapmatlvl">
+                    <img alt="" title="Click the gateway to see why Capability Maturity Level 2 is where you have to be in order to up your game stats and also to stop the chaos. CM Level 2 is the firm base needed for CM L3, 4 and 5!" class="img-fluid" src="/images/gatewayflat.png" onmouseover="this.src='/images/gateway.png'" onmouseout="this.src='/images/gatewayflat.png'">
+                </button>
+                <a href="/?slide=5"><img id="target" class="img-fluid" title="Click the target for the project management and other processes to maintain and improve up to Capability Maturity Level 5" src="/images/targetsmall.png" alt="target"></a>
 
                 <div class="collapse" id="collapsecapmatlvl">
                     <div class="container">
                         <div class="card text-center">
-                            <h5 class="card-header" align="center"></h5>
-                            <div class="card-body text-center">
-
-                                <h5 align="center">Achieve Business Value through Productivity and Quality
-                                    Improvements<br>
+                            <div class="card-body">
+                                <h5>Achieve Business Value through Productivity and Quality Improvements<br>
                                     off the stable base of Project Process Management <br>
-                                    (<a href="/?slide=1">Traditional</a> or <a href="/home/agile"> Agile</a>) <br>
-                                    at Capability Maturity Model Level 2 <br>(+ Software Engineering (Dev), Services and Acquisition processes above CM L2)</h5>
-                                <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                    "collapse" data-target="#collapsepractice" aria-expanded="false" aria-controls=
-                                            "collapsepractice">Process Focus<br><img class="img-fluid" src="/images/unlock.png" title="Read the quotes from Dr Deming here to understand that a focus on processes is the only sure way to escape Capability Maturity Level 1 and below, in order to increase Productivity an Quality at CM L2 and above.">
-                                    <br>Productivity & Quality
+                                    (<a href="/?slide=1">Traditional</a> or <a href="/home/agile">Agile</a>) <br>
+                                    at Capability Maturity Model Level 2 <br>
+                                    (+ Software Engineering (Dev), Services and Acquisition processes above CM L2)
+                                </h5>
+
+                                <button class="btn btn-primary text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapsepractice" aria-expanded="false" aria-controls="collapsepractice">
+                                    Process Focus<br>
+                                    <img class="img-fluid" src="/images/unlock.png" title="Read the quotes from Dr Deming here to understand that a focus on processes is the only sure way to escape Capability Maturity Level 1 and below, in order to increase Productivity an Quality at CM L2 and above."> <br>
+                                    Productivity & Quality
                                 </button>
-                                <br>
-                                <br>
+
                                 <div class="collapse" id="collapsepractice">
                                     <div class="container">
                                         <div class="card text-center">
-                                            <h5 class="card-header" align="center"></h5>
-                                            <div class="card-body text-center">
+                                            <div class="card-body">
+                                                <p>It (<a href="/cmmi" target="_blank">CM Level 2+</a> as differentiated from CM L1 and below)<br>
+                                                    is all about Process Focus and thereby Productivity & Quality improvements <br>
+                                                    (quality outputs from the processes)<br><br>
+                                                    <i>Hover your mouse over the images below <br>or click them to find out more about why process focus is really important for success.</i>
+                                                </p>
 
-                                                <div class="rTable">
-                                                    <div class="rTableBody">
-                                                        <div class="rTableRow">
-                                                            <div class="rTableCell"><p>It (<a href="/cmmi" target="_blank">CM Level 2+</a> as differentiated from CM L1 and below)<br> is all about Process Focus and thereby Productivity & Quality improvements <br>(quality outputs from the processes)<br><br><i>Hover your mouse over the images below <br>or click them to find out more about why process focus is really important for success.</i></p></div>
-                                                            <div class="rTableCell" ><a href="/home/processnotoutcome" target="_blank" ><img class="img-fluid" title="Click there to understand the zen of why it is a good idea to rather focus on process than outcomes" src="/images/demingone.jpg" onmouseover="this.src='/images/demingtwo.jpg'" onmouseout="this.src='/images/demingthree.jpg'" title=""></a><br><br>
-                                                                <p><a href="/redbeads" target="_blank">Click here for Dr. Deming's Red Bead Experiment</a>.<br>
-                                                                    This is an essential concept to learn if you aim for higher levels of <a href="/gamestats" target="_blank">Productivity</a> and Quality and to be agile and lean.</p><h3>
-                                                                    Remember (per Deming's Red Bead Experiment) a process can be stable, in control and be producing defective items 100% of the time!</h3>
+                                                <a href="/home/processnotoutcome" target="_blank">
+                                                    <img class="img-fluid" title="Click there to understand the zen of why it is a good idea to rather focus on process than outcomes" src="/images/demingone.jpg" onmouseover="this.src='/images/demingtwo.jpg'" onmouseout="this.src='/images/demingthree.jpg'" title="">
+                                                </a>
+
+                                                <p><a href="/redbeads" target="_blank">Click here for Dr. Deming's Red Bead Experiment</a>.<br>
+                                                    This is an essential concept to learn if you aim for higher levels of <a href="/gamestats" target="_blank">Productivity</a> and Quality and to be agile and lean.
+                                                </p>
+
+                                                <h3>Remember (per Deming's Red Bead Experiment) a process can be stable, in control and be producing defective items 100% of the time!</h3>
+
+                                                <p>Example of automation in a Value Stream<br>"Grain In and Meal Out"</p>
+                                                <a href="/images/largegrist.gif" target="_blank">
+                                                    <img class="img-fluid" src="/images/smallgrist.gif" title="Input (Grain), Transformation (Grinding of grist Process), Output (Meal or Flour)">
+                                                </a>
+
+                                                <button class="btn btn-primary text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseprocesstiming" aria-expanded="false" aria-controls="collapseprocesstiming">
+                                                    Mapping Value Streams<br>
+                                                    Theory of Constraints<br>
+                                                    Eliminating Waste<br>
+                                                    Lean etc.<br>
+                                                    for<br>
+                                                    "Upped Production Stats"
+                                                </button>
+
+                                                <div class="collapse" id="collapseprocesstiming">
+                                                    <div class="container">
+                                                        <div class="card text-center">
+                                                            <div class="card-header">
+                                                                <img class="img-fluid" src="/images/lordkelvin.jpg">
                                                             </div>
-                                                            <div class="rTableCell"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <br>
 
-
-
-
-                                                <div class="rTable">
-                                                    <div class="rTableBody">
-                                                        <div class="rTableRow">
-                                                            <div class="rTableCell"></div>
-                                                            <div class="rTableCell" >
-
-                                                                <p>Example of automation in a Value Stream<br>"Grain In and Meal Out"</p><a href="/images/largegrist.gif" target="_blank" ><img class="img-fluid" src="/images/smallgrist.gif"  title="Input (Grain), Transformation (Grinding of grist Process), Output (Meal or Flour)"></a>
-
-                                                                <br>
-                                                                <br>
-                                                                <br>
-                                                                <br><button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                                                    "collapse" data-target="#collapseprocesstiming" aria-expanded="false" aria-controls=
-                                                                                "collapseprocesstiming">Mapping Value Streams<br>Theory of Constraints<br>Eliminating Waste<br>Lean etc.<br>for<br> "Upped Production Stats"
-                                                                </button>
-
-                                                                <div class="collapse" id="collapseprocesstiming">
-                                                                    <div class="container">
-                                                                        <div class="card text-center">
-                                                                            <h5 class="card-header" align="center"><img class="img-fluid" src="/images/lordkelvin.jpg"></h5>
-                                                                            <div class="card-body text-center">
-
-
-                                                                                <p align="center"><img class="img-fluid" src="/images/processtiming.jpg"></p>
-                                                                                <br>
-                                                                                <p align="center"><img class="img-fluid" src="/images/herbieandleanswwastes.jpg"></p>
-                                                                                <br>
-
-
-                                                                                <p align="center"><a href="/home/littleslaw" target="_blank">Click here for Little's Law</a></p>
-                                                                                <p align="center"><a href="/home/scrumorkanban" target="_blank">Click here for an excellent article about Scrum or Kanban (or ScrumBan).  <br>PMWay's opinion is found at the bottom.</a></p>
-
-
-
+                                                            <div class="card-body">
+                                                                                <p><img class="img-fluid" src="/images/processtiming.jpg"></p>
+                                                                                <p><img class="img-fluid" src="/images/herbieandleanswwastes.jpg"></p>
+                                                                                <p><a href="/home/littleslaw" target="_blank">Click here for Little's Law</a></p>
+                                                                                <p><a href="/home/scrumorkanban" target="_blank">Click here for an excellent article about Scrum or Kanban (or ScrumBan). <br>PMWay's opinion is found at the bottom.</a></p>
                                                                             </div>
-                                                                            <div class="card-footer">
-
-                                                                            </div>
+                                                                            <div class="card-footer"></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
 
 
-
-                                                            </div>
-                                                            <div class="rTableCell"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <!--EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEPROCESSES DEMINGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE-->
+                                                                <!--EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEPROCESSES DEMINGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE-->
 
                                             </div>
                                             <div class="card-footer">
@@ -462,7 +419,7 @@
                 <br>
 
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn align-center clearfix" type="button" data-toggle="collapse" data-target="#collapseopencarousel" aria-expanded="false" aria-controls="collapseopencarousel">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapseopencarousel" aria-expanded="false" aria-controls="collapseopencarousel">
                     <div class="rTableBody">
                         <div class="rTableRow">
                             <div class="rTableCell"></div>
@@ -482,45 +439,45 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 <br>be a hero, why don't you!</em>--></h5>
                             <div class="card-body text-center customcolor " >
 
-                                <p style="font-size:x-small"><a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="0" title="Slide 1: PMBOK (The checklist for Project Management Professionals)">PMBOK |</a>
+                                <p style="font-size:x-small"><a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="0" title="Slide 1: PMBOK (The checklist for Project Management Professionals)">PMBOK |</a>
 
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="1" title="Slide 2: Standards/Frameworks Landscape (Can you see that the PMBOK is a Standard?)">Standards |
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="1" title="Slide 2: Standards/Frameworks Landscape (Can you see that the PMBOK is a Standard?)">Standards |
                                     </a>
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="2" title="Slide 3: Strategy Wall (Formulating Strategy (strategic or project plan) is fun but the ability to Implement the plan is where running a successful game is at)">Strategy
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="2" title="Slide 3: Strategy Wall (Formulating Strategy (strategic or project plan) is fun but the ability to Implement the plan is where running a successful game is at)">Strategy
                                         |
                                     </a>
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="3" title="Slide 4: Capability Maturity model with levels (If you are CM Level 1 or ZERO you are nowhere)">CMmodel |
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="3" title="Slide 4: Capability Maturity model with levels (If you are CM Level 1 or ZERO you are nowhere)">CMmodel |
                                     </a>
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="4" title="Slide 5: Capability Maturity integrated development dashboard (CM Level 2+ is where your game should be at)">CMMiDev
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="4" title="Slide 5: Capability Maturity integrated development dashboard (CM Level 2+ is where your game should be at)">CMMiDev
 
                                     </a>
                                     <br>
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="5" title="Slide 6: People Process Technology triad (Can you remove the Red Beads?)">PPTtriad |
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="5" title="Slide 6: People Process Technology triad (Can you remove the Red Beads?)">PPTtriad |
 
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel"
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel"
                                            data-slide-to="6" title="Slide 7: Vmodel (Do you Mind the Gap?)"> Vmodel |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="7" title="Slide 8: IT Infrastructure Library version 3 (Do you focus on the IT Stack - Technology so your People's Processes are optimized?)">ITIL
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="7" title="Slide 8: IT Infrastructure Library version 3 (Do you focus on the IT Stack - Technology so your People's Processes are optimized?)">ITIL
                                             |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="8" title="Slide 9: DevOps (Can you actually eat the elephant or is it just talk?">DevOps  |
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="8" title="Slide 9: DevOps (Can you actually eat the elephant or is it just talk?">DevOps  |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="9" title="Slide 10: Prince2Agile (Left shift from to Traditional to Agile with governance [Red Beads removed by the Board!])">Prince2A
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="9" title="Slide 10: Prince2Agile (Left shift from to Traditional to Agile with governance [Red Beads removed by the Board!])">Prince2A
                                             |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="10" title="Slide 11: Dynamic Systems Development Model (left shift means more risk)">DSDM
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="10" title="Slide 11: Dynamic Systems Development Model (left shift means more risk)">DSDM
                                         </a>
                                         <br>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="11" title="Slide 12: Scrum (left shift means even more risk)">Scrum |
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="11" title="Slide 12: Scrum (left shift means even more risk)">Scrum |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="12" title="Slide 13: Scaled Agile Framework (Can your Scrum teams as a Program release working software regularly?)">SAFe
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="12" title="Slide 13: Scaled Agile Framework (Can your Scrum teams as a Program release working software regularly?)">SAFe
                                             |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="13" title="Slide 14: People Capability Maturity Model (Agile and Traditional require Empowered Workgroups)">PCMM |
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="13" title="Slide 14: People Capability Maturity Model (Agile and Traditional require Empowered Workgroups)">PCMM |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="14" title="Slide 15: Control Objectives for Information Technology 5 (Cobit is all the previous slides)">Cobit |
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="14" title="Slide 15: Control Objectives for Information Technology 5 (Cobit is all the previous slides)">Cobit |
                                         </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-target="#mycarousel" data-slide-to="15" title="Slide 16: Plan, Do, Check, Act">PDCA
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-bs-target="#mycarousel" data-slide-to="15" title="Slide 16: Plan, Do, Check, Act">PDCA
                                         </a>
 
                                 </p>
@@ -528,22 +485,22 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
                             <div id="mycarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                                 <ol class="carousel-indicators">
-                                    <li data-target="#mycarousel" data-slide-to="0" title="Slide 1: PMBOK" class="active"></li>
-                                    <li data-target="#mycarousel" data-slide-to="1" title="Slide 2: Standards Frameworks Landscape"></li>
-                                    <li data-target="#mycarousel" data-slide-to="2" title="Slide 3: Strategy Wall"></li>
-                                    <li data-target="#mycarousel" data-slide-to="3" title="Slide 4: Capability Maturity Levels"></li>
-                                    <li data-target="#mycarousel" data-slide-to="4" title="Slide 5: CMMi Dev Dashboard"></li>
-                                    <li data-target="#mycarousel" data-slide-to="5" title="Slide 6: People Process Technology and Red Bead Removal"></li>
-                                    <li data-target="#mycarousel" data-slide-to="6" title="Slide 7: V Model Mind the Gap"></li>
-                                    <li data-target="#mycarousel" data-slide-to="7" title="Slide 8: ITIL"></li>
-                                    <li data-target="#mycarousel" data-slide-to="8" title="Slide 9: DevOps"></li>
-                                    <li data-target="#mycarousel" data-slide-to="9" title="Slide 10: PRINCE2 Agile"></li>
-                                    <li data-target="#mycarousel" data-slide-to="10" title="Slide 11: DSDM"></li>
-                                    <li data-target="#mycarousel" data-slide-to="11" title="Slide 12: Scrum"></li>
-                                    <li data-target="#mycarousel" data-slide-to="12" title="Slide 13: SAFe"></li>
-                                    <li data-target="#mycarousel" data-slide-to="13" title="Slide 14: People CMM"></li>
-                                    <li data-target="#mycarousel" data-slide-to="14" title="Slide 15: Cobit 5"></li>
-                                    <li data-target="#mycarousel" data-slide-to="15" title="Slide 16: PDCA"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="0" title="Slide 1: PMBOK" class="active"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="1" title="Slide 2: Standards Frameworks Landscape"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="2" title="Slide 3: Strategy Wall"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="3" title="Slide 4: Capability Maturity Levels"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="4" title="Slide 5: CMMi Dev Dashboard"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="5" title="Slide 6: People Process Technology and Red Bead Removal"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="6" title="Slide 7: V Model Mind the Gap"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="7" title="Slide 8: ITIL"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="8" title="Slide 9: DevOps"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="9" title="Slide 10: PRINCE2 Agile"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="10" title="Slide 11: DSDM"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="11" title="Slide 12: Scrum"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="12" title="Slide 13: SAFe"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="13" title="Slide 14: People CMM"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="14" title="Slide 15: Cobit 5"></li>
+                                    <li data-bs-target="#mycarousel" data-slide-to="15" title="Slide 16: PDCA"></li>
 
                                 </ol>
 
@@ -632,7 +589,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
                                             <br>
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapseinfo" aria-expanded="false" aria-controls="collapseinfo">The PMBOK 6 Dashboard
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapseinfo" aria-expanded="false" aria-controls="collapseinfo">The PMBOK 6 Dashboard
                                             </button>
 
                                             <div class="collapse" id="collapseinfo">
@@ -721,7 +678,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                     triangle (triad).<br>Now answer the questions about Governance and Execution then click the buttons
                                                     below.</i></p>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsetimecostquality" aria-expanded="false" aria-controls="collapsetimecostquality">Time, Cost and Quality
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetimecostquality" aria-expanded="false" aria-controls="collapsetimecostquality">Time, Cost and Quality
                                                 <br> The Essence of Project Management!
                                             </button>
 
@@ -754,7 +711,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             </div>
                                             <br>
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsegovernance" aria-expanded="false" aria-controls="collapsegovernance">Under Control?
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsegovernance" aria-expanded="false" aria-controls="collapsegovernance">Under Control?
                                             </button>
 
                                             <div class="collapse" id="collapsegovernance">
@@ -799,7 +756,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                             <br>
                                                             <br>
 
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsescrumgovernance" aria-expanded="false" aria-controls="collapsescrumgovernance">Governance for Agile's Scrum?</button>
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsescrumgovernance" aria-expanded="false" aria-controls="collapsescrumgovernance">Governance for Agile's Scrum?</button>
 
                                                             <div class="collapse" id="collapsescrumgovernance">
                                                                 <div class="container">
@@ -841,7 +798,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                     above (to open the PMP CMMi lego brick) <br>and reveal the secret to successful strategy (and project)
                                                     Implementation.</i> </p>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsestrategy" aria-expanded="false" aria-controls="collapsestrategy">Strategy</button>
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsestrategy" aria-expanded="false" aria-controls="collapsestrategy">Strategy</button>
 
                                             <div class="collapse" id="collapsestrategy">
                                                 <div class="container">
@@ -883,7 +840,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <a href="/pin" title="Click to Pin down your Capability Maturity level now!  Or drag the pin through the gateway and hit the Productivity and Quality improvement target!"><img alt="pin" class="img-fluid" id="pintwo" src="/images/pinlarge.png"></a>
                                             <br>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapserabbithole" aria-expanded="false" aria-controls="collapserabbithole">Capability Maturity Levels</button>
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapserabbithole" aria-expanded="false" aria-controls="collapserabbithole">Capability Maturity Levels</button>
 
                                             <div class="collapse" id="collapserabbithole">
                                                 <div class="container">
@@ -919,7 +876,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                                 Plan"<br>"Just Do It!"</h5>
                                                             <p align="center">
 
-                                                                <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapseoops" aria-expanded="false" aria-controls="collapseoops">OOPS!
+                                                                <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapseoops" aria-expanded="false" aria-controls="collapseoops">OOPS!
                                                                 </button>
 
                                                             <div class="collapse" id="collapseoops">
@@ -957,7 +914,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                                 <br>&quot;Killing the Goose
                                                                 for its Golden Eggs."</h5>
 
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsetoons" aria-expanded="false" aria-controls="collapsetoons">NOWHERE!
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetoons" aria-expanded="false" aria-controls="collapsetoons">NOWHERE!
                                                             </button>
 
                                                             <div class="collapse" id="collapsetoons">
@@ -995,8 +952,8 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                                             <br>
                                                                             <br><!--
 
-                                                     <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-"collapse" data-target="#collapsesaatlevelzero" aria-expanded="false" aria-controls=
+                                                     <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+"collapse" data-bs-target="#collapsesaatlevelzero" aria-expanded="false" aria-controls=
         "collapsesaatlevelzero">South Africa operating  @ CM Level ZERO
 </button>
 
@@ -1072,7 +1029,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <br>
                                             <br>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsejourney" aria-expanded="false" aria-controls="collapsejourney">CMMi
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsejourney" aria-expanded="false" aria-controls="collapsejourney">CMMi
                                                 <br>Your first step
                                             </button>
 
@@ -1097,7 +1054,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <br>
                                             <br>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsepdca" aria-expanded="false" aria-controls="collapsepdca">PDCA
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsepdca" aria-expanded="false" aria-controls="collapsepdca">PDCA
                                             </button>
 
                                             <div class="collapse" id="collapsepdca">
@@ -1168,7 +1125,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <!--<img class="img-fluid" src="/images/gap55wider.jpg">-->
                                             <br>
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsemindthegap" aria-expanded="false" aria-controls="collapsemindthegap">Mind the Gap
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsemindthegap" aria-expanded="false" aria-controls="collapsemindthegap">Mind the Gap
                                             </button>
 
                                             <div class="collapse" id="collapsemindthegap">
@@ -1213,8 +1170,8 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <p><img alt="ITIL" class="img-fluid" src="/images/itil_v321.png"></p>
                                             <p><img alt="ITIL Books" class="img-fluid" src="/images/itilstageswithbooks.png"></p>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                                "collapse" data-target="#collapseitiloverview" aria-expanded="false" aria-controls=
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+                                                "collapse" data-bs-target="#collapseitiloverview" aria-expanded="false" aria-controls=
                                                         "collapseitiloverview">ITIL - Processes Overview
                                             </button>
 
@@ -1246,8 +1203,8 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
                                             </p>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                                "collapse" data-target="#collapsecsibl" aria-expanded="false" aria-controls=
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+                                                "collapse" data-bs-target="#collapsecsibl" aria-expanded="false" aria-controls=
                                                         "collapsecsibl">ITIL, the CSI Register and the Scrum Backlog
                                             </button>
 
@@ -1299,7 +1256,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             </p>
 
                                             <p><i>Click the Elephant for DevOps essence!</i></p>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsedandd" aria-expanded="false" aria-controls="collapsedandd">Done or Un-Done?</button>
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsedandd" aria-expanded="false" aria-controls="collapsedandd">Done or Un-Done?</button>
 
                                             <div class="collapse" id="collapsedandd">
                                                 <div class="container">
@@ -1312,7 +1269,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                             <br>
                                                             <br>
 
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsepmboksixone" aria-expanded="false" aria-controls="collapsepmboksixone">PO as new RM!
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsepmboksixone" aria-expanded="false" aria-controls="collapsepmboksixone">PO as new RM!
                                                             </button>
 
                                                             <div class="collapse" id="collapsepmboksixone">
@@ -1350,7 +1307,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                             </div>
                                                             <br>
                                                             <br>
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsevaluemodel" aria-expanded="false" aria-controls="collapsevaluemodel">The Product Owner
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsevaluemodel" aria-expanded="false" aria-controls="collapsevaluemodel">The Product Owner
                                                                 <br>and
                                                                 <br>Scrum Value Model
                                                             </button>
@@ -1407,20 +1364,23 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                     </div>
                                     <!--END OF CAROUSEL SLIDE-->
 
-                                    <div class="carousel-item" align="center">
-                                        <div class="container" style="max-width:70%">
+                                    <!-- Carousel Item -->
+                                    <div class="carousel-item text-center">
+                                        <div class="container" style="max-width: 70%">
+                                            <!-- Content -->
                                             <h5><strong>PRINCE2 (Agile)</strong></h5>
-
-                                            <img class="img-fluid" src="/images/prince2processmodelwithbriefcase.jpg" "=" " onmouseover=" this.src='/images/prince2modelprocwhereagilehappens.png' " onmouseout=" this.src='/images/prince2processmodelwithbriefcase.jpg' " ">
-                                            <p><i>Click the image above to see where Agility (with Governance) happens.<br>The image below shows how agility can introduce risk. Can you see it?</i></p>
-
-                                            <a href="/home/agile?slide=11" target="_blank" title="Click here for more on the agile Methods. The Agile Manifesto section - especially project selection matrix - explains this image in more detail."><img alt="" class="img-fluid" src="/images/tradagilep2a.png"></a>
-                                            <p><i>Click the image above for an overview of the different agile methods</i></p>
-                                            <!--END OF CONTENT-->
-                                            <br>
-                                            <br>
+                                            <img class="img-fluid" src="/images/prince2processmodelwithbriefcase.jpg"
+                                                 onmouseover="this.src='/images/prince2modelprocwhereagilehappens.png'"
+                                                 onmouseout="this.src='/images/prince2processmodelwithbriefcase.jpg'">
+                                            <p><i>Click the image above to see where Agility (with Governance) happens.</i></p>
+                                            <a href="/home/agile?slide=11" target="_blank">
+                                                <img alt="" class="img-fluid" src="/images/tradagilep2a.png">
+                                            </a>
+                                            <p><i>Click the image above for an overview of the different agile methods.</i></p>
                                         </div>
                                     </div>
+                                    <!-- End of Carousel Item -->
+
                                     <!--END OF CAROUSEL SLIDE-->
 
                                     <div class="carousel-item" align="center">
@@ -1459,7 +1419,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <br>
 
                                             <!--
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsescrumvaluemodel" aria-expanded="false" aria-controls="collapsescrumvaluemodel">The Scrum Value Model
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsescrumvaluemodel" aria-expanded="false" aria-controls="collapsescrumvaluemodel">The Scrum Value Model
                                             </button>
 
                                             <div class="collapse" id="collapsescrumvaluemodel">
@@ -1482,8 +1442,8 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <br>-->
                                             <br>
 
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                                "collapse" data-target="#collapsevaluemodelessence" aria-expanded="false" aria-controls=
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+                                                "collapse" data-bs-target="#collapsevaluemodelessence" aria-expanded="false" aria-controls=
                                                         "collapsevaluemodelessence">The Scrum Essence <br>(for Capability Maturity Level 2+)
                                             </button>
 
@@ -1532,7 +1492,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <p><a href="/homeviewpdf/resources/scrumsafelyfordownload.pdf" target="_blank">Click here for Scrum SAFely pdf</p>
                                             <br>
 
-                                            <!--      <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsesafer" aria-expanded="false" aria-controls="collapsesafer">SAFe?
+                                            <!--      <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesafer" aria-expanded="false" aria-controls="collapsesafer">SAFe?
                                                   </button>
 
                                                   <div class="collapse" id="collapsesafer">
@@ -1545,7 +1505,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                                       <br>(<a href="/vmodel" target="_blank">I.e. "Working Software Demo" to next "Working
                                             Software Demo"</a> in <a href="/productincrement" target="_blank">product increments</a>!)</p>
 
-                                                                  <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsesafe" aria-expanded="false" aria-controls="collapsesafe">The SAFe challenge!
+                                                                  <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesafe" aria-expanded="false" aria-controls="collapsesafe">The SAFe challenge!
                                                                   </button>
 
                                                                   <div class="collapse" id="collapsesafe">
@@ -1580,7 +1540,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                                                   <h3>extending this to DevOps...</h3>
 
                                                                                   <p align="center"><img alt="" class="img-fluid" src="/images/devopsuncertain.png" onmouseover="this.src='/images/devandops.png'" onmouseout="this.src='/images/devopsuncertain.png'" title="Click the image now to reduce Devops uncertainty"></p>
-                                                                                  <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsereinventing" aria-expanded="false" aria-controls="collapsereinventing">I.e.
+                                                                                  <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsereinventing" aria-expanded="false" aria-controls="collapsereinventing">I.e.
                                                                                   </button>
 
                                                                                   <div class="collapse" id="collapsereinventing">
@@ -1676,8 +1636,8 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <img alt="" class="img-fluid" src="/images/pcmmoverviewbevelled.png">
                                             <br>
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-                                                "collapse" data-target="#collapsecats" aria-expanded="false" aria-controls=
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+                                                "collapse" data-bs-target="#collapsecats" aria-expanded="false" aria-controls=
                                                         "collapsecats">Level 1:  Herding Cats</button>
 
                                             <div class="collapse" id="collapsecats">
@@ -1710,7 +1670,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             </div>
                                             <br>
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsepeople" aria-expanded="false" aria-controls="collapsepeople">People
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsepeople" aria-expanded="false" aria-controls="collapsepeople">People
                                             </button>
 
                                             <div class="collapse" id="collapsepeople">
@@ -1752,7 +1712,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <img alt="" class="img-fluid" src="/images/11scobitprocessreferencemodel.png">
                                             <br>
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsecobits" aria-expanded="false" aria-controls="collapsecobits">COBIT
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsecobits" aria-expanded="false" aria-controls="collapsecobits">COBIT
                                             </button>
 
                                             <div class="collapse" id="collapsecobits">
@@ -1799,7 +1759,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                             <p class="ctr"> <img alt="" class="img-fluid" src="/images/nopdcacycle.jpg"></p>
 
                                             <br>
-                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsemoreinfo" aria-expanded="false" aria-controls="collapsemoreinfo">PDCA
+                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsemoreinfo" aria-expanded="false" aria-controls="collapsemoreinfo">PDCA
                                             </button>
 
                                             <div class="collapse" id="collapsemoreinfo">
@@ -1821,7 +1781,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
                                                             <p align="left">PDCA (plan do check act or plan do check adjust) is an iterative four-step management method used in business for the control and continuous improvement of processes and products. It is also known as the Deming circle/cycle/wheel, Shewhart cycle, control circle/cycle, or Plan Do Study Act (PDSA). Another version of this PDCA cycle is OPDCA. The added &quot;O&quot; stands for observation or as some versions say &quot;Grasp the current condition.&quot; This emphasis on observation and current condition has currency with Lean manufacturing/Toyota Production System literature.</p>
 
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsepdcaworks" aria-expanded="false" aria-controls="collapsepdcaworks">PDCA - How It Works.
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsepdcaworks" aria-expanded="false" aria-controls="collapsepdcaworks">PDCA - How It Works.
                                                             </button>
 
                                                             <div class="collapse" id="collapsepdcaworks">
@@ -1851,7 +1811,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
                                                             <br>
                                                             <br>
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsecheckact" aria-expanded="false" aria-controls="collapsecheckact">Plan, Check &amp; Act
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsecheckact" aria-expanded="false" aria-controls="collapsecheckact">Plan, Check &amp; Act
                                                                 <br>- Difficult to get correct!
                                                             </button>
 
@@ -1921,7 +1881,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                                             <br>
                                                             <br>
 
-                                                            <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapsehistory" aria-expanded="false" aria-controls="collapsehistory">PDCA - History Lesson!
+                                                            <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapsehistory" aria-expanded="false" aria-controls="collapsehistory">PDCA - History Lesson!
                                                             </button>
 
                                                             <div class="collapse" id="collapsehistory">
@@ -2021,8 +1981,8 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
 
         <!--<div align="center">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary align-center clearfix" type="button" data-toggle=
-        "collapse" data-target="#collapsepmbokdashclickable" aria-expanded="false" aria-controls=
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle=
+        "collapse" data-bs-target="#collapsepmbokdashclickable" aria-expanded="false" aria-controls=
                 "collapsepmbokdashclickable">The Drillable<br>PMBOK 6<br>Dashboard<br>
 
         </button>
@@ -2035,7 +1995,7 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
                     <!--
 
-                    <button class="btn btn-primary align-center clearfix" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapsepmboksixone">
+                    <button class="btn btn-primary align-center clearfix" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapsepmboksixone">
                         small screens
                         <br>process selector wheel
                     </button>

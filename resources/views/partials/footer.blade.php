@@ -9,12 +9,24 @@
 {{--<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>--}}
 
 
-{{--<footer class="footer py-4 bg-dark text-white-50">--}}
-{{--    <footer class="footer py-4 bg-dark text-white-50">--}}
-<div class="text-center footer-bg" style="background-color: #your-color;">
+{{--<style>--}}
+{{--.footer {--}}
+{{--/*position: absolute;*/--}}
+{{--bottom: 0;--}}
+{{--left: 0;--}}
+{{--right: 0;--}}
+{{--width: 100%;--}}
+{{--padding-bottom: 100px; /* Add some padding to the bottom */--}}
+{{--}--}}
+{{--</style>--}}
 
-    <div class="row">
-        <div class="col-md-6">
+<footer>
+    <div class="flex flex-col w-full justify-end text-center bg-dark py-10" style="background-color: #212529 !important; margin: 0; padding-left: 0; padding-right: 0;">
+
+    <div class="w-full mx-0 px-0">
+            <div class="row mx-0">
+                <div class="col-md-6">
+
 
             <p style="text-align:center" class="text-white">Project &amp; Process Management <span lang="en-za">Best Practice</span> <br>at CM Level 2 and above</p>
             <p align="center">
@@ -23,17 +35,19 @@
                 </a>
             </p>
             <p style="text-align:center" class="text-white">underpinned by ITIL</p>
-        </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-3 text-right small align-self-end text-white pe-3">
-            @if(isset($siteSettings))
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3 text-right small align-self-end text-white pe-8">
+
+                @if(isset($siteSettings))
                 <p>&copy; 2009 {{ $siteSettings->footer_note }}</p>
             @endif<br><small>People Process Technology Governance Execution</small>
+                </div>
+            </div>
         </div>
-
     </div>
 
-</div>
 
-{{--</footer>--}}
+
+</footer>
 

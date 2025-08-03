@@ -5,7 +5,7 @@
              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
                 <p class="wow fadeInUp" data-wow-delay=".4s">
-                   This blog is for ideas to improve a team's Capability and Maturity
+                   Share your ideas
                 </p>
              </div>
           </div>
