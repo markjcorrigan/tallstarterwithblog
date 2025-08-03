@@ -7,7 +7,7 @@
         "dev": "vite"
     },
     "dependencies": {
-        "@tailwindcss/vite": "^4.0.7",
+        "@tailwindcss/vite": "^4.1.11",
         "autoprefixer": "^10.4.20",
         "axios": "^1.8.2",
         "bootstrap": "^5.3.7",
@@ -15,7 +15,7 @@
         "jquery": "^3.7.1",
         "jquery-ui-dist": "^1.13.3",
         "laravel-vite-plugin": "^1.0",
-        "tailwindcss": "^4.0.7",
+        "tailwindcss": "^4.1.11",
         "vite": "^6.3"
     },
     "optionalDependencies": {
