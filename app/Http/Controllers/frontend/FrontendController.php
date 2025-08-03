@@ -31,6 +31,13 @@ class FrontendController extends Controller
         return view('frontend.portfoliopage'); // or any other view you want to display
     }
 
+    public function pmway()
+    {
+        return view('pmway');
+    }
+
+
+
 //
 //    public function BlogDetails($slug){
 //        $post = BlogPost::where('post_slug', $slug)->first();

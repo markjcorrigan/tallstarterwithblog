@@ -17,7 +17,8 @@ use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Livewire\Home::class)->name('home');
-//Route::get('/pmwayhome', Pmwayhome::class)->withoutMiddleware([Authenticate::class]);
+Route::get('/pmway', [FrontendController::class, 'pmway'])->withoutMiddleware([Authenticate::class]);
+
 
 
 // Frontend all routes
