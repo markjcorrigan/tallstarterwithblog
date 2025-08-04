@@ -7,6 +7,8 @@ use App\Models\Contact;
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
+use phpDocumentor\Reflection\Types\Void_;
 
 class FrontendController extends Controller
 {
@@ -21,17 +23,22 @@ class FrontendController extends Controller
 ////        dd($posts); // This will dump the posts and exit the script
 //        return view('frontend.blogpage', compact('posts'));
 //    }
-    public function blog()
+    public function blog(): View
     {
         return view('frontend.blogpage'); // or any other view you want to display
     }
 
-    public function portfolio()
+    public function portfolio(): View
     {
         return view('frontend.portfoliopage'); // or any other view you want to display
     }
 
-    public function pmway()
+    public function pmwayguest(): View
+    {
+        return view('pmway');
+    }
+
+    public function pmwayauth(): View
     {
         return view('pmway');
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\backend\BlogPostController;
 use App\Http\Controllers\backend\CommentController;
 use App\Http\Controllers\backend\HeroController;
@@ -10,16 +11,23 @@ use App\Http\Controllers\backend\SiteSettingsController;
 use App\Http\Controllers\backend\SkillsController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\frontend\FrontendController;
-use App\Livewire\PmwayHome;
+//use App\Livewire\PmwayHome;
 use App\Livewire\PrivateOne;
 use App\Livewire\Laws;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
+//Route::redirect('/', '/pmwayguest')->withoutMiddleware([Authenticate::class]);
+
+//Route::get('/', \App\Livewire\Home::class)->name('home');
 Route::get('/', \App\Livewire\Home::class)->name('home');
-Route::get('/pmway', [FrontendController::class, 'pmway'])->withoutMiddleware([Authenticate::class]);
+Route::get('/pmwayguest', [FrontendController::class, 'pmwayguest'])->name('pmwayguest')->withoutMiddleware([Authenticate::class]);
+Route::get('/pmwayauth', [FrontendController::class, 'pmwayauth'])->middleware(['auth', 'verified'])->name('pmwayauth');
+Route::get('/laws', \App\Livewire\Laws::class)->name('laws');
 
-
+Route::post('/forcelogout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('forcelogout');
 
 // Frontend all routes
 Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
