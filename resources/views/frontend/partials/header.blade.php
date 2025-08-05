@@ -8,6 +8,7 @@
              <div class="logo-box">
                 <a href="/">
                    <img src="{{asset($siteSettings->logo)}}" alt="" />
+
                 </a>
              </div>
 

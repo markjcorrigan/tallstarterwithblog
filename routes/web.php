@@ -12,18 +12,31 @@ use App\Http\Controllers\backend\SkillsController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\frontend\FrontendController;
 //use App\Livewire\PmwayHome;
+use App\Livewire\About;
 use App\Livewire\PrivateOne;
 use App\Livewire\Laws;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+
 
 //Route::redirect('/', '/pmwayguest')->withoutMiddleware([Authenticate::class]);
+Route::get('/simulate-500', function () {
+    abort(500, 'Simulated 500 error');
+});
+
+
+
+
+
 
 //Route::get('/', \App\Livewire\Home::class)->name('home');
 Route::get('/', \App\Livewire\Home::class)->name('home');
 Route::get('/pmwayguest', [FrontendController::class, 'pmwayguest'])->name('pmwayguest')->withoutMiddleware([Authenticate::class]);
 Route::get('/pmwayauth', [FrontendController::class, 'pmwayauth'])->middleware(['auth', 'verified'])->name('pmwayauth');
 Route::get('/laws', \App\Livewire\Laws::class)->name('laws');
+Route::get('/about', About::class);
+
 
 Route::post('/forcelogout', [AuthenticatedSessionController::class, 'destroy'])
     ->middleware('auth')

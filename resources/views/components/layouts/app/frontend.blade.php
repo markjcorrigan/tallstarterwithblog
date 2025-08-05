@@ -2,6 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
 <head>
     @include('partials.head')
+
+{{--    <head>--}}
+{{--        <title>{{ $title ?? 'Page Title' }}</title>--}}
+{{--    </head>--}}
 </head>
 <body class="min-h-screen bg-white dark:bg-zinc-800" >
 <style>

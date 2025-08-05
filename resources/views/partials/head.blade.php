@@ -3,7 +3,8 @@
 
 <title>
     @if(!empty($title))
-        {{ $title }} | {{ config('app.name') }}
+{{--        {{ $title }} | {{ config('app.name') }}--}}
+        {{ $title }}
     @else
         {{ config('app.name') }}
     @endif
