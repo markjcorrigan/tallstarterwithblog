@@ -41,8 +41,8 @@ Route::get('/accelerate', \App\Livewire\Accelerate::class);
 // Upload and Download documents
 Route::get('/document-uploads', [FrontendController::class, 'uploads'])->name('uploads')->middleware(['auth', 'verified', 'permission:document uploads']);
 Route::post('/document-upload', [FrontendController::class, 'upload'])->name('upload')->middleware(['auth', 'verified', 'permission:document upload']);
-//Route::get('/documents', [FrontendController::class, 'documents'])->name('documents');
-Route::get('/downloadbyshortname/{shortname}', [FrontendController::class, 'downloadByShortName'])->middleware(['auth', 'verified', 'permission:download byshortname']);
+Route::get('/documents', [FrontendController::class, 'documents'])->name('documents');
+Route::get('/downloadbyshortname/{shortname}', [FrontendController::class, 'downloadByShortName'])->name('downloadByShortName')->middleware(['auth', 'verified', 'permission:download byshortname']);
 Route::delete('/documents/{id}', [FrontendController::class, 'destroy'])->name('documents.destroy')->middleware(['auth', 'verified', 'permission:documents destroy']);
 Route::get('/documents/{id}/edit', [FrontendController::class, 'edit'])->name('documents.edit')->middleware(['auth', 'verified', 'permission:documents edit']);
 Route::put('/documents/{id}', [FrontendController::class, 'update'])->name('documents.update')->middleware(['auth', 'verified', 'permission:documents update']);

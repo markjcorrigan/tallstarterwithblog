@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2025 at 09:44 AM
+-- Generation Time: Aug 06, 2025 at 02:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.4.8
 
@@ -39,13 +39,6 @@ CREATE TABLE `blog_posts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `blog_posts`
---
-
-INSERT INTO `blog_posts` (`id`, `user_id`, `post_title`, `post_slug`, `photo`, `post_tags`, `post_description`, `created_at`, `updated_at`) VALUES
-(3, 1, 'My first blog', 'my-first-blog', 'uploads/blog/post_1839249102805804.jpeg', 'Dog', '<p><span style=\"color: rgb(236, 240, 241);\">My first bloggidy blog blog</span></p>', '2025-08-01 10:37:10', '2025-08-01 10:37:35');
-
 -- --------------------------------------------------------
 
 --
@@ -57,6 +50,13 @@ CREATE TABLE `cache` (
   `value` mediumtext NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('pmway_cache_spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:65:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:16:\"access dashboard\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"impersonate\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:2;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:10:\"view users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:3;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:12:\"create users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:4;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:12:\"update users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:5;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:12:\"delete users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:10:\"view roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:12:\"create roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:8;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:12:\"update roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:9;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:12:\"delete roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:10;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:16:\"view permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:11;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:18:\"create permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:12;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:18:\"update permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:13;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:18:\"delete permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:14;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:11:\"access blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:15;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:8:\"add post\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:16;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:10:\"store post\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:17;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:9:\"edit post\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:18;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:11:\"update post\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:19;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:11:\"delete post\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:20;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:15:\"edit experience\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:21;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:17:\"update experience\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:22;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:17:\"delete experience\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:23;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:16:\"store experience\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:24;a:4:{s:1:\"a\";i:26;s:1:\"b\";s:8:\"all post\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:25;a:4:{s:1:\"a\";i:27;s:1:\"b\";s:13:\"my experience\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:26;a:4:{s:1:\"a\";i:28;s:1:\"b\";s:8:\"all hero\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:27;a:4:{s:1:\"a\";i:29;s:1:\"b\";s:11:\"update hero\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:28;a:4:{s:1:\"a\";i:30;s:1:\"b\";s:11:\"all service\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:29;a:4:{s:1:\"a\";i:31;s:1:\"b\";s:11:\"add service\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:30;a:4:{s:1:\"a\";i:32;s:1:\"b\";s:13:\"store service\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:31;a:4:{s:1:\"a\";i:33;s:1:\"b\";s:12:\"edit service\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:32;a:4:{s:1:\"a\";i:34;s:1:\"b\";s:14:\"update service\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:33;a:4:{s:1:\"a\";i:35;s:1:\"b\";s:14:\"delete service\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:34;a:4:{s:1:\"a\";i:36;s:1:\"b\";s:8:\"all work\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:35;a:4:{s:1:\"a\";i:37;s:1:\"b\";s:8:\"add work\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:36;a:4:{s:1:\"a\";i:38;s:1:\"b\";s:10:\"store work\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:37;a:4:{s:1:\"a\";i:39;s:1:\"b\";s:9:\"edit work\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:38;a:4:{s:1:\"a\";i:40;s:1:\"b\";s:11:\"update work\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:39;a:4:{s:1:\"a\";i:41;s:1:\"b\";s:11:\"delete work\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:40;a:4:{s:1:\"a\";i:42;s:1:\"b\";s:14:\"all experience\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:41;a:4:{s:1:\"a\";i:43;s:1:\"b\";s:13:\"all education\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:42;a:4:{s:1:\"a\";i:44;s:1:\"b\";s:9:\"add skill\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:43;a:4:{s:1:\"a\";i:45;s:1:\"b\";s:11:\"store skill\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:44;a:4:{s:1:\"a\";i:46;s:1:\"b\";s:9:\"all skill\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:45;a:4:{s:1:\"a\";i:47;s:1:\"b\";s:12:\"update skill\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:46;a:4:{s:1:\"a\";i:48;s:1:\"b\";s:10:\"edit skill\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:47;a:4:{s:1:\"a\";i:49;s:1:\"b\";s:12:\"delete skill\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:48;a:4:{s:1:\"a\";i:50;s:1:\"b\";s:13:\"add testimony\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:49;a:4:{s:1:\"a\";i:51;s:1:\"b\";s:15:\"store testimony\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:50;a:4:{s:1:\"a\";i:52;s:1:\"b\";s:13:\"all testimony\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:51;a:4:{s:1:\"a\";i:53;s:1:\"b\";s:14:\"edit testimony\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:52;a:4:{s:1:\"a\";i:54;s:1:\"b\";s:16:\"update testimony\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:53;a:4:{s:1:\"a\";i:55;s:1:\"b\";s:16:\"delete testimony\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:54;a:4:{s:1:\"a\";i:56;s:1:\"b\";s:11:\"all setting\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:55;a:4:{s:1:\"a\";i:57;s:1:\"b\";s:14:\"update setting\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:56;a:4:{s:1:\"a\";i:58;s:1:\"b\";s:11:\"all contact\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:57;a:4:{s:1:\"a\";i:59;s:1:\"b\";s:14:\"delete contact\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:58;a:4:{s:1:\"a\";i:60;s:1:\"b\";s:14:\"update comment\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:59;a:4:{s:1:\"a\";i:61;s:1:\"b\";s:16:\"document uploads\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:60;a:4:{s:1:\"a\";i:62;s:1:\"b\";s:15:\"document upload\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:61;a:4:{s:1:\"a\";i:63;s:1:\"b\";s:20:\"download byshortname\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:62;a:4:{s:1:\"a\";i:64;s:1:\"b\";s:17:\"documents destroy\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:63;a:4:{s:1:\"a\";i:65;s:1:\"b\";s:14:\"documents edit\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:64;a:4:{s:1:\"a\";i:66;s:1:\"b\";s:16:\"documents update\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}}s:5:\"roles\";a:1:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:11:\"Super Admin\";s:1:\"c\";s:3:\"web\";}}}', 1754566931);
 
 -- --------------------------------------------------------
 
@@ -87,13 +87,6 @@ CREATE TABLE `comments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `post_id`, `user_name`, `user_email`, `comment`, `status`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Mark Corrigan', 'Markjc@mweb.co.za', 'My first comment', 1, '2025-08-01 10:38:29', '2025-08-01 13:22:33');
-
 -- --------------------------------------------------------
 
 --
@@ -112,12 +105,20 @@ CREATE TABLE `contacts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `contacts`
+-- Table structure for table `documents`
 --
 
-INSERT INTO `contacts` (`id`, `first_name`, `last_name`, `email`, `phone`, `service_id`, `description`, `created_at`, `updated_at`) VALUES
-(5, 'mark', 'corrigan', 'markjc@mweb.co.za', '-909879078qwr97', 1, 'asdfasdfasdf', '2025-08-01 17:19:10', '2025-08-01 17:19:10');
+CREATE TABLE `documents` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `shortname` varchar(30) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -158,14 +159,6 @@ CREATE TABLE `heroes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `heroes`
---
-
-INSERT INTO `heroes` (`id`, `name`, `profession`, `short_description`, `photo`, `resume`, `twitter_url`, `youtube_url`, `linkin_url`, `github_url`, `YOE`, `PC`, `HC`, `created_at`, `updated_at`) VALUES
-(2, 'Markus', 'A big man', 'A very big man', 'uploads/hero/Hero-1839249949366959.jpeg', 'uploads/resume/Resume_1839249949412782.docx', NULL, NULL, NULL, NULL, '35', '100ds', 'Happy', '2025-08-01 10:50:38', '2025-08-01 10:50:38'),
-(3, 'Fenris', 'Thief catcher', NULL, 'uploads/hero/Hero-1839254531741853.jpeg', 'uploads/resume/Resume_1839254531788677.txt', NULL, NULL, NULL, NULL, '12', '3', 'Me', '2025-08-01 12:03:28', '2025-08-01 12:03:28');
 
 -- --------------------------------------------------------
 
@@ -222,19 +215,20 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(4, '2025_02_24_190537_create_permission_tables', 1),
-(5, '2025_02_25_161844_create_services_table', 1),
-(6, '2025_02_28_231218_create_portfolios_table', 1),
-(7, '2025_03_01_183145_add_locale_to_users_table', 1),
-(8, '2025_03_02_114850_create_resumes_table', 1),
-(9, '2025_03_03_131959_create_skills_table', 1),
-(10, '2025_03_04_132858_create_testinomials_table', 1),
-(11, '2025_03_05_140222_create_blog_posts_table', 1),
-(12, '2025_03_08_110457_create_comments_table', 1),
-(13, '2025_03_08_213302_create_contacts_table', 1),
-(14, '2025_03_09_130441_create_site_settings_table', 1),
-(15, '2025_02_24_122652_create_heroes_table', 2),
-(16, '2025_08_01_131124_make_service_id_nullable', 3);
+(4, '2025_02_24_122652_create_heroes_table', 1),
+(5, '2025_02_24_190537_create_permission_tables', 1),
+(6, '2025_02_25_161844_create_services_table', 1),
+(7, '2025_02_28_231218_create_portfolios_table', 1),
+(8, '2025_03_01_183145_add_locale_to_users_table', 1),
+(9, '2025_03_02_114850_create_resumes_table', 1),
+(10, '2025_03_03_131959_create_skills_table', 1),
+(11, '2025_03_04_132858_create_testinomials_table', 1),
+(12, '2025_03_05_140222_create_blog_posts_table', 1),
+(13, '2025_03_08_110457_create_comments_table', 1),
+(14, '2025_03_08_213302_create_contacts_table', 1),
+(15, '2025_03_09_130441_create_site_settings_table', 1),
+(16, '2025_08_01_131124_make_service_id_nullable', 1),
+(17, '2025_12_01_000000_create_documents_table', 1);
 
 -- --------------------------------------------------------
 
@@ -265,7 +259,7 @@ CREATE TABLE `model_has_roles` (
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
-(1, 'App\\Models\\User', 1);
+(1, 'App\\Models\\User', 2);
 
 -- --------------------------------------------------------
 
@@ -298,64 +292,71 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'access dashboard', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(2, 'impersonate', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(3, 'view users', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(4, 'create users', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(5, 'update users', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(6, 'delete users', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(7, 'view roles', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(8, 'create roles', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(9, 'update roles', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(10, 'delete roles', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(11, 'view permissions', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(12, 'create permissions', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(13, 'update permissions', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(14, 'delete permissions', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19'),
-(16, 'add post', 'web', '2025-08-01 06:16:25', '2025-08-01 06:16:25'),
-(17, 'store post', 'web', '2025-08-01 06:16:39', '2025-08-01 06:16:39'),
-(18, 'edit post', 'web', '2025-08-01 06:16:49', '2025-08-01 06:16:49'),
-(19, 'update post', 'web', '2025-08-01 06:16:59', '2025-08-01 06:16:59'),
-(20, 'delete post', 'web', '2025-08-01 06:17:07', '2025-08-01 06:17:07'),
-(21, 'edit experience', 'web', '2025-08-01 06:17:21', '2025-08-01 06:17:21'),
-(22, 'update experience', 'web', '2025-08-01 06:17:32', '2025-08-01 06:17:32'),
-(23, 'delete experience', 'web', '2025-08-01 06:17:47', '2025-08-01 06:17:47'),
-(24, 'store experience', 'web', '2025-08-01 06:18:18', '2025-08-01 06:18:18'),
-(25, 'all post', 'web', '2025-08-01 06:19:43', '2025-08-01 06:19:43'),
-(26, 'my experience', 'web', '2025-08-01 10:09:35', '2025-08-01 10:09:35'),
-(27, 'all hero', 'web', '2025-08-02 07:17:39', '2025-08-02 07:17:39'),
-(28, 'update hero', 'web', '2025-08-02 07:18:17', '2025-08-02 07:18:17'),
-(29, 'all service', 'web', '2025-08-02 07:18:47', '2025-08-02 07:31:39'),
-(30, 'add service', 'web', '2025-08-02 07:19:12', '2025-08-02 07:20:44'),
-(31, 'store service', 'web', '2025-08-02 07:20:59', '2025-08-02 07:20:59'),
-(32, 'edit service', 'web', '2025-08-02 07:21:21', '2025-08-02 07:21:21'),
-(33, 'update service', 'web', '2025-08-02 07:21:43', '2025-08-02 07:21:43'),
-(34, 'delete service', 'web', '2025-08-02 07:22:33', '2025-08-02 07:22:33'),
-(35, 'all work', 'web', '2025-08-02 07:23:10', '2025-08-02 07:31:19'),
-(36, 'add work', 'web', '2025-08-02 07:23:38', '2025-08-02 07:23:38'),
-(37, 'store work', 'web', '2025-08-02 07:24:12', '2025-08-02 07:24:12'),
-(38, 'edit work', 'web', '2025-08-02 07:24:33', '2025-08-02 07:24:33'),
-(39, 'update work', 'web', '2025-08-02 07:25:07', '2025-08-02 07:25:07'),
-(40, 'delete work', 'web', '2025-08-02 07:25:27', '2025-08-02 07:25:27'),
-(41, 'all experience', 'web', '2025-08-02 07:26:08', '2025-08-02 07:26:08'),
-(42, 'all education', 'web', '2025-08-02 07:29:41', '2025-08-02 07:29:41'),
-(43, 'add skill', 'web', '2025-08-02 07:30:15', '2025-08-02 07:30:15'),
-(44, 'store skill', 'web', '2025-08-02 07:30:38', '2025-08-02 07:30:38'),
-(45, 'all skill', 'web', '2025-08-02 07:31:00', '2025-08-02 07:31:00'),
-(46, 'update skill', 'web', '2025-08-02 07:32:14', '2025-08-02 07:32:14'),
-(47, 'edit skill', 'web', '2025-08-02 07:33:13', '2025-08-02 07:33:13'),
-(48, 'delete skill', 'web', '2025-08-02 07:34:35', '2025-08-02 07:34:35'),
-(49, 'add testimony', 'web', '2025-08-02 07:35:20', '2025-08-02 07:35:20'),
-(50, 'store testimony', 'web', '2025-08-02 07:35:43', '2025-08-02 07:35:43'),
-(51, 'all testimony', 'web', '2025-08-02 07:36:05', '2025-08-02 07:36:05'),
-(52, 'edit testimony', 'web', '2025-08-02 07:36:28', '2025-08-02 07:36:28'),
-(53, 'update testimony', 'web', '2025-08-02 07:36:52', '2025-08-02 07:36:52'),
-(54, 'delete testimony', 'web', '2025-08-02 07:37:18', '2025-08-02 07:37:18'),
-(55, 'all setting', 'web', '2025-08-02 07:39:25', '2025-08-02 07:39:25'),
-(56, 'update setting', 'web', '2025-08-02 07:39:36', '2025-08-02 07:39:36'),
-(57, 'all contact', 'web', '2025-08-02 07:40:34', '2025-08-02 07:40:34'),
-(58, 'delete contact', 'web', '2025-08-02 07:40:45', '2025-08-02 07:40:45'),
-(59, 'update comment', 'web', '2025-08-02 07:41:20', '2025-08-02 07:41:20');
+(1, 'access dashboard', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(2, 'impersonate', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(3, 'view users', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(4, 'create users', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(5, 'update users', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(6, 'delete users', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(7, 'view roles', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(8, 'create roles', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(9, 'update roles', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(10, 'delete roles', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(11, 'view permissions', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(12, 'create permissions', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(13, 'update permissions', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(14, 'delete permissions', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(15, 'access blog', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43'),
+(17, 'add post', 'web', '2025-08-06 11:15:18', '2025-08-06 11:15:18'),
+(18, 'store post', 'web', '2025-08-06 11:15:18', '2025-08-06 11:15:18'),
+(19, 'edit post', 'web', '2025-08-06 11:15:18', '2025-08-06 11:15:18'),
+(20, 'update post', 'web', '2025-08-06 11:15:18', '2025-08-06 11:15:18'),
+(21, 'delete post', 'web', '2025-08-06 11:15:18', '2025-08-06 11:15:18'),
+(22, 'edit experience', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(23, 'update experience', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(24, 'delete experience', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(25, 'store experience', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(26, 'all post', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(27, 'my experience', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(28, 'all hero', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(29, 'update hero', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(30, 'all service', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(31, 'add service', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(32, 'store service', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(33, 'edit service', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(34, 'update service', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(35, 'delete service', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(36, 'all work', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(37, 'add work', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(38, 'store work', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(39, 'edit work', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(40, 'update work', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(41, 'delete work', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(42, 'all experience', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(43, 'all education', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(44, 'add skill', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(45, 'store skill', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(46, 'all skill', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(47, 'update skill', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(48, 'edit skill', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(49, 'delete skill', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(50, 'add testimony', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(51, 'store testimony', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(52, 'all testimony', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(53, 'edit testimony', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(54, 'update testimony', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(55, 'delete testimony', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(56, 'all setting', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(57, 'update setting', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(58, 'all contact', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(59, 'delete contact', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(60, 'update comment', 'web', '2025-08-06 11:15:19', '2025-08-06 11:15:19'),
+(61, 'document uploads', 'web', '2025-08-06 11:17:08', '2025-08-06 11:17:08'),
+(62, 'document upload', 'web', '2025-08-06 11:17:21', '2025-08-06 11:17:21'),
+(63, 'download byshortname', 'web', '2025-08-06 11:18:44', '2025-08-06 11:18:44'),
+(64, 'documents destroy', 'web', '2025-08-06 11:20:29', '2025-08-06 11:20:29'),
+(65, 'documents edit', 'web', '2025-08-06 11:21:14', '2025-08-06 11:21:14'),
+(66, 'documents update', 'web', '2025-08-06 11:21:46', '2025-08-06 11:21:46');
 
 -- --------------------------------------------------------
 
@@ -391,14 +392,6 @@ CREATE TABLE `resumes` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `resumes`
---
-
-INSERT INTO `resumes` (`id`, `resume_cat`, `resume_title`, `institution`, `from_year`, `to_year`, `created_at`, `updated_at`) VALUES
-(1, 'education', 'Wizard Degree', 'Hogwarts', '2020', 'present', '2025-08-01 10:04:41', '2025-08-01 10:08:41'),
-(2, 'experience', 'Lead Developer', 'The Boom Town Rats', '2020', '2025', '2025-08-01 10:10:39', '2025-08-01 10:10:46');
-
 -- --------------------------------------------------------
 
 --
@@ -418,7 +411,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'web', '2025-08-01 06:08:19', '2025-08-01 06:08:19');
+(1, 'Super Admin', 'web', '2025-08-06 08:47:43', '2025-08-06 08:47:43');
 
 -- --------------------------------------------------------
 
@@ -450,7 +443,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (12, 1),
 (13, 1),
 (14, 1),
-(16, 1),
+(15, 1),
 (17, 1),
 (18, 1),
 (19, 1),
@@ -493,7 +486,14 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (56, 1),
 (57, 1),
 (58, 1),
-(59, 1);
+(59, 1),
+(60, 1),
+(61, 1),
+(62, 1),
+(63, 1),
+(64, 1),
+(65, 1),
+(66, 1);
 
 -- --------------------------------------------------------
 
@@ -508,13 +508,6 @@ CREATE TABLE `services` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `services`
---
-
-INSERT INTO `services` (`id`, `service_title`, `service_description`, `created_at`, `updated_at`) VALUES
-(1, 'My Service', 'My Service Detail', '2025-08-01 11:30:05', '2025-08-01 11:30:57');
 
 -- --------------------------------------------------------
 
@@ -536,7 +529,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('eChD3KNLISLse1dHyr7c2RzU90BXUyOwod0FkBdf', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo4OntzOjY6Il90b2tlbiI7czo0MDoiaURIblU4Mm1XN3l2dTViNnlVNXVzNHZ5Q2M3OUdnQWNqbFhWa0JZYyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbGwtdGVzdGltb2llcyI7fXM6MjI6IlBIUERFQlVHQkFSX1NUQUNLX0RBVEEiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxMjoibHczNTA2NjMzNTAwIjtpOjUwO3M6MTE6Imx3ODYyMjA0MTkxIjtpOjEwO3M6MTI6Imx3MzYxNzg4NDkxMCI7aToxMDt9', 1754120555);
+('Ad1XGDMpdsV3H0T95e2Uv75YPWlJ6gJme24cqdub', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoib3cyRlFPNDFNdU11dE9RVkhHSExXc3QwQTNnMmU1SWJDNFNZT3JnaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6MjI6IlBIUERFQlVHQkFSX1NUQUNLX0RBVEEiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1754483715);
 
 -- --------------------------------------------------------
 
@@ -555,13 +548,6 @@ CREATE TABLE `site_settings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `site_settings`
---
-
-INSERT INTO `site_settings` (`id`, `phone`, `email`, `address`, `logo`, `footer_note`, `created_at`, `updated_at`) VALUES
-(1, '0828032304', 'markjc@mweb.co.za', '29 Majuba Avenue Quellerina', '', 'PMWay', '2025-08-01 07:57:36', '2025-08-01 07:57:36');
-
 -- --------------------------------------------------------
 
 --
@@ -576,13 +562,6 @@ CREATE TABLE `skills` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `skills`
---
-
-INSERT INTO `skills` (`id`, `icon`, `exp_level`, `technology_name`, `created_at`, `updated_at`) VALUES
-(1, 'uploads/skills/tech_1839247796484259.jpeg', '95%', 'PHP', '2025-08-01 10:16:25', '2025-08-01 10:16:38');
 
 -- --------------------------------------------------------
 
@@ -623,8 +602,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `locale`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'markjc', 'markjc@mweb.co.za', '2025-08-01 06:13:19', '$2y$12$1If5udwPNiR4/gqAovYPu.M4GT6UHILHNtcJGYS8m.Ver2Q2S5odm', 'en', NULL, '2025-08-01 06:09:59', '2025-08-01 06:09:59'),
-(2, 'markjon', 'markjoncorrigan@gmail.com', '2025-08-01 06:13:31', '$2y$12$6yih0fLtXDvNZLbfLZ5ifezNHMYmsYfgBFYkwZ0qodi0rVzApuANS', 'en', NULL, '2025-08-01 06:10:36', '2025-08-01 06:10:36');
+(1, 'markjoncorrigan', 'markjoncorrigan@gmail.com', '2025-08-06 08:53:53', '$2y$12$4c6ZZ6O2UOEmnjmOc6grI.ShrZvOOM0c1OquUEjJNw43CjnkO8CEK', 'en', NULL, '2025-08-06 08:50:01', '2025-08-06 08:53:53'),
+(2, 'markjc', 'markjc@mweb.co.za', '2025-08-06 08:57:10', '$2y$12$4c6ZZ6O2UOEmnjmOc6grI.ShrZvOOM0c1OquUEjJNw43CjnkO8CEK', 'en', NULL, '2025-08-06 08:50:19', '2025-08-06 08:57:10');
 
 --
 -- Indexes for dumped tables
@@ -658,6 +637,12 @@ ALTER TABLE `comments`
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `documents`
+--
+ALTER TABLE `documents`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -792,19 +777,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog_posts`
 --
 ALTER TABLE `blog_posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `documents`
+--
+ALTER TABLE `documents`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -816,7 +807,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `heroes`
 --
 ALTER TABLE `heroes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -828,13 +819,13 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `portfolios`
@@ -846,7 +837,7 @@ ALTER TABLE `portfolios`
 -- AUTO_INCREMENT for table `resumes`
 --
 ALTER TABLE `resumes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -858,19 +849,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `site_settings`
 --
 ALTER TABLE `site_settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `testinomials`
