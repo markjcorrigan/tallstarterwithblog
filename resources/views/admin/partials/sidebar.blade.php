@@ -154,6 +154,16 @@
           </a>
         </li>
 
+          <li class="nav-item">
+              <a href="{{ route('uploads') }}" class="nav-link">
+                  <i class="link-icon" data-feather="box"></i>
+                  <span class="link-title">Up/Downloads</span>
+              </a>
+          </li>
+
+
+
+
         <li class="nav-item">
           <a href="{{ route('site.settings') }}" class="nav-link">
             <i class="link-icon" data-feather="box"></i>
