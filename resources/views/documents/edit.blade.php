@@ -1,12 +1,18 @@
+@extends('documents.documentlayout.default')
 
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @vite('resources/css/app.css')
-</head>
-<body>
+@section('header')
+    <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+    @section('title', 'Edit Documents')
+
+    <x-documentsnav />
+
+
+@endsection('header')
+
+@section('maincontent')
+    <main>
+        <div class="container mx-auto p-4 mt-10">
 
 @if (session()->has('success'))
     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
@@ -31,6 +37,9 @@
     <input type="text" name="shortname" value="{{ $document->shortname }}" class="block w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
     <button type="submit" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Changes</button>
 </form>
-</body>
-</html>
+    <br><br><br><br> <br><br><br><br><br>
+@endsection('maincontent')
+@section('footer')
 
+    <x-footer />
+@endsection('footer')

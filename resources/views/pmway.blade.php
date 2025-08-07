@@ -38,11 +38,20 @@
     <div class="container-fluid p-0 m-0">
 
         <style>
+            @media (max-width: 768px) {
+                #sticky-footer {
+                    padding: 20px; /* adjust the padding value as needed */
+                    margin-bottom: 20px; /* add some margin to the bottom */
+                }
+            }
+
             /* Make the image fully responsive */
 
-            body {
-                /*     background-color: #c2e8fc !important; */
+            html, body {
+                overflow-y: auto;
+                height: 100%;
             }
+
 
             .customcolor {
                 /*  background-color: #c2e8fc !important; */
@@ -72,6 +81,14 @@
 
             }
 
+
+            #sticky-footer {
+                /*height: 100px;*/
+                margin-top: auto;
+                padding: 50px;
+                margin-bottom: 0; /* add this line */
+                padding-bottom: 20px; /* adjust the padding-bottom value as needed */
+            }
 
 
 
@@ -2240,34 +2257,50 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
 
 
-
-
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-6">
-
-                    <p style="text-align:center" class="text-white">Project &amp; Process Management
-                        <span lang="en-za">Best Practice</span>
-
-                        <br>at <!--<a href="/cmmi" title="Where are you at?  Click here for PMWay's 1 minute self assessment challenge.  We dare you to take the pin test now!" >-->CM Level 2<!--</a>--> and above</p>
-                    <p align="center"><!--<a href="/gamestats">-->
-                        <!--<img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" title="How are your game stats?">--><!--</a>-->
-                        <a href="/gamestats" target="_blanik"><img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" onmouseover="this.src='/images/devops2.gif'" onmouseout="this.src='/images/devopsimagemedium.png'" title="How are your game stats?  Click here for more"></a></p>
-
-
-
-
-                    <p style="text-align:center" class="text-white">underpinned by <!--<a href="/home/itil">-->ITIL<!--</a>--></p>
-
-                </div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3 text-right small align-self-end text-white">2009 PMWay<br><small>People Process Technology Governance Execution</small></div>
-            </div>
+    <footer id="sticky-footer" class="py-4" style="background-color: #343a40; color: rgba(255, 255, 255, 0.5);">
+        <div class="container mx-auto text-center">
+            <p class="text-white">Project &amp; Process Management <span lang="en-za">Best Practice</span> <br>at CM Level 2 and above</p>
+            <p>
+                <a href="/gamestats" target="_blanik">
+                    <img alt="Up Stat or Down Stat" class="img-fluid mx-auto d-block" src="/images/devopsimagemedium.png" onmouseover="this.src='/images/devops2.gif'" onmouseout="this.src='/images/devopsimagemedium.png'" title="How are your game stats? Click here for more">
+                </a>
+            </p>
+            <p class="text-white">underpinned by ITIL</p>
+            <br>
+            <p class="small text-white">
+                <span class="text-white">&copy;</span> 2009 PMWay<br>
+                <small>People Process Technology Governance Execution</small>
+            </p>
         </div>
-        <br><br>
-
     </footer>
+
+
+{{--    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">--}}
+{{--        <div class="container text-center">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-6">--}}
+
+{{--                    <p style="text-align:center" class="text-white">Project &amp; Process Management--}}
+{{--                        <span lang="en-za">Best Practice</span>--}}
+
+{{--                        <br>at <!--<a href="/cmmi" title="Where are you at?  Click here for PMWay's 1 minute self assessment challenge.  We dare you to take the pin test now!" >-->CM Level 2<!--</a>--> and above</p>--}}
+{{--                    <p align="center"><!--<a href="/gamestats">-->--}}
+{{--                        <!--<img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" title="How are your game stats?">--><!--</a>-->--}}
+{{--                        <a href="/gamestats" target="_blanik"><img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" onmouseover="this.src='/images/devops2.gif'" onmouseout="this.src='/images/devopsimagemedium.png'" title="How are your game stats?  Click here for more"></a></p>--}}
+
+
+
+
+{{--                    <p style="text-align:center" class="text-white">underpinned by <!--<a href="/home/itil">-->ITIL<!--</a>--></p>--}}
+
+{{--                </div>--}}
+{{--                <div class="col-md-3"></div>--}}
+{{--                <div class="col-md-3 text-right small align-self-end text-white">2009 PMWay<br><small>People Process Technology Governance Execution</small></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <br><br>--}}
+
+{{--    </footer>--}}
 
 
 
@@ -2396,37 +2429,24 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                         <div class="container-fluid p-0 m-0">
 
                             <style>
+
+
+                                @media (max-width: 768px) {
+                                    #sticky-footer {
+                                        padding: 20px 20px 30px; /* top, left/right, bottom */
+                                        margin-bottom: 20px;
+                                    }
+                                }
+
+
+
+
                                 /* Make the image fully responsive */
 
                                 html, body {
                                     overflow-y: auto;
+                                    height: 100%;
                                 }
-
-
-
-                                * {
-                                    box-sizing: border-box;
-                                }
-
-                                body {
-                                    display: flex;
-                                    flex-direction: column;
-                                    min-height: 100vh;
-                                    margin: 0;
-                                }
-
-                                #sticky-footer {
-                                    margin-top: auto;
-                                    padding: 10px; /* add some padding to the footer */
-                                }
-
-
-
-                                * {
-                                    box-sizing: border-box;
-                                }
-
-
 
 
                                 .customcolor {
@@ -2458,6 +2478,16 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                 }
 
 
+                                #sticky-footer {
+                                    /*padding: 50px 50px 20px 50px;*/
+                                    /*margin-bottom: 0;*/
+
+                                    margin-top: auto;
+                                    padding: 40px;
+                                    margin-bottom: 0; /* add this line */
+                                    padding-bottom: 10px; /* adjust the padding-bottom value as needed */
+                                }
+
 
 
 
@@ -2475,8 +2505,6 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                     border-radius: 100%;
                                     background-color: #040404;
                                 }
-
-
 
 
 
@@ -2521,13 +2549,10 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
                                 .verticalalign {
                                     vertical-align: bottom;
                                 }
-
-
-
                             </style>
 
 
-                                <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                                     <a class="navbar-brand" href="/">PMWay</a>
                                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
                                         <span class="navbar-toggler-icon"></span>
@@ -4592,35 +4617,51 @@ PMBOK 6 process #4.3,<br>or <a href="/?slide=12" target="_blank">Scrum process #
 
 
 
+                        <footer id="sticky-footer" class="py-4" style="background-color: #343a40; color: rgba(255, 255, 255, 0.5);">
+                            <div class="container mx-auto text-center">
+                                <p class="text-white">Project &amp; Process Management <span lang="en-za">Best Practice</span> <br>at CM Level 2 and above</p>
+                                <p>
+                                    <a href="/gamestats" target="_blanik">
+                                        <img alt="Up Stat or Down Stat" class="img-fluid mx-auto d-block" src="/images/devopsimagemedium.png" onmouseover="this.src='/images/devops2.gif'" onmouseout="this.src='/images/devopsimagemedium.png'" title="How are your game stats? Click here for more">
+                                    </a>
+                                </p>
+                                <p class="text-white">underpinned by ITIL</p>
+                                <p class="small text-white">
+                                    <span class="text-white">&copy;</span> 2009 PMWay<br>
+                                    <small>People Process Technology Governance Execution</small>
+                                </p>
 
-
-
-                        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-                            <div class="container text-center">
-                                <div class="row">
-                                    <div class="col-md-6">
-
-                                        <p style="text-align:center" class="text-white">Project &amp; Process Management
-                                            <span lang="en-za">Best Practice</span>
-
-                                            <br>at <!--<a href="/cmmi" title="Where are you at?  Click here for PMWay's 1 minute self assessment challenge.  We dare you to take the pin test now!" >-->CM Level 2<!--</a>--> and above</p>
-                                        <p align="center"><!--<a href="/gamestats">-->
-                                            <!--<img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" title="How are your game stats?">--><!--</a>-->
-                                            <a href="/gamestats" target="_blanik"><img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" onmouseover="this.src='/images/devops2.gif'" onmouseout="this.src='/images/devopsimagemedium.png'" title="How are your game stats?  Click here for more"></a></p>
-
-
-
-
-                                        <p style="text-align:center" class="text-white">underpinned by <!--<a href="/home/itil">-->ITIL<!--</a>--></p>
-
-                                    </div>
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-3 text-right small align-self-end text-white">2009 PMWay<br><small>People Process Technology Governance Execution</small></div>
-                                </div>
                             </div>
-                            <br><br>
-
                         </footer>
+
+
+
+{{--                        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">--}}
+{{--                            <div class="container text-center">--}}
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-6">--}}
+
+{{--                                        <p style="text-align:center" class="text-white">Project &amp; Process Management--}}
+{{--                                            <span lang="en-za">Best Practice</span>--}}
+
+{{--                                            <br>at <!--<a href="/cmmi" title="Where are you at?  Click here for PMWay's 1 minute self assessment challenge.  We dare you to take the pin test now!" >-->CM Level 2<!--</a>--> and above</p>--}}
+{{--                                        <p align="center"><!--<a href="/gamestats">-->--}}
+{{--                                            <!--<img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" title="How are your game stats?">--><!--</a>-->--}}
+{{--                                            <a href="/gamestats" target="_blanik"><img alt="Up Stat or Down Stat" class="img-fluid" src="/images/devopsimagemedium.png" onmouseover="this.src='/images/devops2.gif'" onmouseout="this.src='/images/devopsimagemedium.png'" title="How are your game stats?  Click here for more"></a></p>--}}
+
+
+
+
+{{--                                        <p style="text-align:center" class="text-white">underpinned by <!--<a href="/home/itil">-->ITIL<!--</a>--></p>--}}
+
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-3"></div>--}}
+{{--                                    <div class="col-md-3 text-right small align-self-end text-white">2009 PMWay<br><small>People Process Technology Governance Execution</small></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <br><br>--}}
+
+{{--                        </footer>--}}
 
 
 

@@ -77,6 +77,7 @@ class PermissionSeeder extends Seeder
             'documents destroy',
             'documents edit',
             'documents update',
+            'portfolio dash',
         ];
 
 

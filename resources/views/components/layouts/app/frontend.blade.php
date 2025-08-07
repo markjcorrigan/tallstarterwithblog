@@ -75,17 +75,19 @@
         <flux:spacer/>
         <flux:spacer/>
         @guest
+
+        <flux:navbar.item class="text-black" style="color: black  !important"  href="{{ route('pmwayguest') }}" :current="request()->routeIs('pmwayguest')"> PMWay </flux:navbar.item>
             <flux:navbar.item class="text-black" style="color: black !important" href="{{ route('portfolio') }}" :current="request()->routeIs('portfolio')">
                 Portfolio
             </flux:navbar.item>
 
-           <flux:navbar.item class="text-black" style="color: black  !important"  href="{{ route('pmwayguest') }}" :current="request()->routeIs('pmwayguest')"> PMWay </flux:navbar.item>
+
             <flux:navbar.item class="text-black" style="color: black  !important" href="{{ route('blog') }}" :current="request()->routeIs('blog')"> Blog </flux:navbar.item>
             <flux:navbar.item class="text-black" style="color: black  !important" href="{{ route('contact') }}" :current="request()->routeIs('contact')"> Contact </flux:navbar.item>
         @endguest
         @auth
         <flux:navbar.item class="text-black" style="color: black" href="{{ route('pmwayauth') }}" :current="request()->routeIs('pmwayauth')"> PMWay </flux:navbar.item>
-            <flux:navbar.item class="text-black" style="color: black" href="{{ route('all.post') }}" :current="request()->routeIs('all.post')"> Blog </flux:navbar.item>
+{{--            <flux:navbar.item class="text-black" style="color: black" href="{{ route('portfoliodash') }}" :current="request()->routeIs('portfoliodash')"> Admin </flux:navbar.item>--}}
         @endauth
 
         <!-- existing code -->

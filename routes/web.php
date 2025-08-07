@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\BlogPostController;
 use App\Http\Controllers\backend\CommentController;
 use App\Http\Controllers\backend\HeroController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\backend\ServicesController;
 use App\Http\Controllers\backend\SiteSettingsController;
 use App\Http\Controllers\backend\SkillsController;
 use App\Http\Controllers\backend\TestimonialController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\frontend\FrontendController;
 //use App\Livewire\PmwayHome;
 use App\Livewire\About;
@@ -56,7 +58,10 @@ Route::post('/forcelogout', [AuthenticatedSessionController::class, 'destroy'])
     ->middleware('auth')
     ->name('forcelogout');
 
+
+
 // Frontend all routes
+Route::get('/portfoliodash', [AdminController::class, 'PortfolioDash'])->name('portfoliodash')->middleware(['auth', 'verified', 'permission:portfolio dash']);
 Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
 Route::get('/portfolio', [FrontendController::class, 'portfolio'])->name('portfolio');
 Route::get('/post/details/{slug}', [FrontendController::class, 'BlogDetails']);
@@ -69,16 +74,13 @@ Route::get('/contact', function () {
 })->name('contact');
 
 // Upload and Download documents
-Route::get('/document-uploads', [FrontendController::class, 'uploads'])->name('uploads')->middleware(['auth', 'verified', 'permission:document uploads']);
-Route::post('/document-upload', [FrontendController::class, 'upload'])->name('upload')->middleware(['auth', 'verified', 'permission:document upload']);
-Route::get('/documents', [FrontendController::class, 'documents'])->name('documents');
-Route::get('/downloadbyshortname/{shortname}', [FrontendController::class, 'downloadByShortName'])->name('downloadByShortName')->middleware(['auth', 'verified', 'permission:download byshortname']);
-Route::delete('/documents/{id}', [FrontendController::class, 'destroy'])->name('documents.destroy')->middleware(['auth', 'verified', 'permission:documents destroy']);
-Route::get('/documents/{id}/edit', [FrontendController::class, 'edit'])->name('documents.edit')->middleware(['auth', 'verified', 'permission:documents edit']);
-Route::put('/documents/{id}', [FrontendController::class, 'update'])->name('documents.update')->middleware(['auth', 'verified', 'permission:documents update']);
-
-
-
+Route::get('/document-uploads', [DocumentController::class, 'uploads'])->name('uploads')->middleware(['auth', 'verified', 'permission:document uploads']);
+Route::post('/document-upload', [DocumentController::class, 'upload'])->name('upload')->middleware(['auth', 'verified', 'permission:document upload']);
+Route::get('/documents', [DocumentController::class, 'documents'])->name('documents');
+Route::get('/downloadbyshortname/{shortname}', [DocumentController::class, 'downloadByShortName'])->name('downloadByShortName')->middleware(['auth', 'verified', 'permission:download byshortname']);
+Route::delete('/documents/{id}', [DocumentController::class, 'destroy'])->name('documents.destroy')->middleware(['auth', 'verified', 'permission:documents destroy']);
+Route::get('/documents/{id}/edit', [DocumentController::class, 'edit'])->name('documents.edit')->middleware(['auth', 'verified', 'permission:documents edit']);
+Route::put('/documents/{id}', [DocumentController::class, 'update'])->name('documents.update')->middleware(['auth', 'verified', 'permission:documents update']);
 
 
 // Blog Posts
@@ -209,6 +211,7 @@ Route::middleware(['auth'])->group(function (): void {
 
     Route::prefix('admin')->as('admin.')->group(function (): void {
         Route::get('/', \App\Livewire\Admin\Index::class)->middleware(['auth', 'verified'])->name('index')->middleware('can:access dashboard');
+//        Route::get('/', \App\Livewire\Admin\Index::class)->name('admin')->middleware(['auth', 'verified', 'permission:access dashboard']);
         Route::get('/users', \App\Livewire\Admin\Users::class)->name('users.index')->middleware('can:view users');
         Route::get('/users/create', \App\Livewire\Admin\Users\CreateUser::class)->name('users.create')->middleware('can:create users');
         Route::get('/users/{user}', \App\Livewire\Admin\Users\ViewUser::class)->name('users.show')->middleware('can:view users');

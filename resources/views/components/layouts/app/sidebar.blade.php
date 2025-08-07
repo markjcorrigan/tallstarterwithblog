@@ -46,8 +46,8 @@
                 @endcan
 
                     @can('view permissions')
-                        <flux:navlist.item icon="pencil" :href="route('all.post')" :current="request()->routeIs('all.post.*')">
-                            {{ __('Blog') }}
+                        <flux:navlist.item icon="pencil" :href="route('portfoliodash')" :current="request()->routeIs('portfoliodash.*')">
+                            {{ __('PortfolioAdmin') }}
                         </flux:navlist.item>
                     @endcan
             </flux:navlist.group>
