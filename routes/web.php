@@ -17,6 +17,8 @@ use App\Livewire\PrivateOne;
 use App\Livewire\Laws;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
+
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
@@ -28,6 +30,14 @@ Route::get('/simulate-500', function () {
 
 
 
+Route::get('/css/fontawesome', function () {
+    $css = Cache::remember('fontawesome_css', 60, function () {
+        return file_get_contents(public_path('fontawesome6/css/all.css'));
+    });
+
+    return response($css)->header('Content-Type', 'text/css');
+});
+
 
 
 //Route::get('/', \App\Livewire\Home::class)->name('home');
@@ -37,17 +47,6 @@ Route::get('/pmwayauth', [FrontendController::class, 'pmwayauth'])->middleware([
 Route::get('/laws', \App\Livewire\Laws::class)->name('laws');
 Route::get('/about', About::class);
 Route::get('/accelerate', \App\Livewire\Accelerate::class);
-
-// Upload and Download documents
-Route::get('/document-uploads', [FrontendController::class, 'uploads'])->name('uploads')->middleware(['auth', 'verified', 'permission:document uploads']);
-Route::post('/document-upload', [FrontendController::class, 'upload'])->name('upload')->middleware(['auth', 'verified', 'permission:document upload']);
-Route::get('/documents', [FrontendController::class, 'documents'])->name('documents');
-Route::get('/downloadbyshortname/{shortname}', [FrontendController::class, 'downloadByShortName'])->name('downloadByShortName')->middleware(['auth', 'verified', 'permission:download byshortname']);
-Route::delete('/documents/{id}', [FrontendController::class, 'destroy'])->name('documents.destroy')->middleware(['auth', 'verified', 'permission:documents destroy']);
-Route::get('/documents/{id}/edit', [FrontendController::class, 'edit'])->name('documents.edit')->middleware(['auth', 'verified', 'permission:documents edit']);
-Route::put('/documents/{id}', [FrontendController::class, 'update'])->name('documents.update')->middleware(['auth', 'verified', 'permission:documents update']);
-
-
 
 
 
@@ -68,6 +67,17 @@ Route::get('/dashboard', \App\Livewire\Dashboard::class)->middleware(['auth', 'v
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+// Upload and Download documents
+Route::get('/document-uploads', [FrontendController::class, 'uploads'])->name('uploads')->middleware(['auth', 'verified', 'permission:document uploads']);
+Route::post('/document-upload', [FrontendController::class, 'upload'])->name('upload')->middleware(['auth', 'verified', 'permission:document upload']);
+Route::get('/documents', [FrontendController::class, 'documents'])->name('documents');
+Route::get('/downloadbyshortname/{shortname}', [FrontendController::class, 'downloadByShortName'])->name('downloadByShortName')->middleware(['auth', 'verified', 'permission:download byshortname']);
+Route::delete('/documents/{id}', [FrontendController::class, 'destroy'])->name('documents.destroy')->middleware(['auth', 'verified', 'permission:documents destroy']);
+Route::get('/documents/{id}/edit', [FrontendController::class, 'edit'])->name('documents.edit')->middleware(['auth', 'verified', 'permission:documents edit']);
+Route::put('/documents/{id}', [FrontendController::class, 'update'])->name('documents.update')->middleware(['auth', 'verified', 'permission:documents update']);
+
+
 
 
 

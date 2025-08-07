@@ -18,18 +18,26 @@ class FrontendController extends Controller
 //    public function homepage(){
 //        return view('frontend.homepage');
 //    } // End method
+    public function blog()
+    {
+        // Your blog logic here
+
+        $posts = BlogPost::latest()->get();
+//        dd($posts); // This will dump the posts and exit the script
+        return view('frontend.blogpage', compact('posts'));
+    }
+//    public function blog(): View
+//    {
+//        return view('frontend.blogpage'); // or any other view you want to display
+//    }
+
 //    public function blog()
 //    {
-//        // Your blog logic here
-//
-//        $posts = BlogPost::latest()->get();
-////        dd($posts); // This will dump the posts and exit the script
-//        return view('frontend.blogpage', compact('posts'));
+//        return view('frontend.blogpage');
 //    }
-    public function blog(): View
-    {
-        return view('frontend.blogpage'); // or any other view you want to display
-    }
+
+
+
 
     public function portfolio(): View
     {
@@ -246,10 +254,6 @@ class FrontendController extends Controller
         }
         return redirect()->route('uploads')->with('error', 'Document not found!');
     }
-
-
-
-
 
 }
 
