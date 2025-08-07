@@ -32,13 +32,13 @@ Route::get('/simulate-500', function () {
 
 
 
-Route::get('/css/fontawesome', function () {
-    $css = Cache::remember('fontawesome_css', 60, function () {
-        return file_get_contents(public_path('fontawesome6/css/all.css'));
-    });
-
-    return response($css)->header('Content-Type', 'text/css');
-});
+//Route::get('/css/fontawesome', function () {
+//    $css = Cache::remember('fontawesome_css', 60, function () {
+//        return file_get_contents(public_path('fontawesome6/css/all.css'));
+//    });
+//
+//    return response($css)->header('Content-Type', 'text/css');
+//});
 
 
 
@@ -209,19 +209,33 @@ Route::middleware(['auth'])->group(function (): void {
 
     });
 
+//    Route::prefix('admin')->as('admin.')->group(function (): void {
+//        Route::get('/', \App\Livewire\Admin\Index::class)->middleware(['auth', 'verified'])->name('index')->middleware('can:access dashboard');
+////        Route::get('/', \App\Livewire\Admin\Index::class)->name('admin')->middleware(['auth', 'verified', 'permission:access dashboard']);
+//        Route::get('/users', \App\Livewire\Admin\Users::class)->name('users.index')->middleware('can:view users');
+//        Route::get('/users/create', \App\Livewire\Admin\Users\CreateUser::class)->name('users.create')->middleware('can:create users');
+//        Route::get('/users/{user}', \App\Livewire\Admin\Users\ViewUser::class)->name('users.show')->middleware('can:view users');
+//        Route::get('/users/{user}/edit', \App\Livewire\Admin\Users\EditUser::class)->name('users.edit')->middleware('can:update users');
+//        Route::get('/roles', \App\Livewire\Admin\Roles::class)->name('roles.index')->middleware('can:view roles');
+//        Route::get('/roles/create', \App\Livewire\Admin\Roles\CreateRole::class)->name('roles.create')->middleware('can:create roles');
+//        Route::get('/roles/{role}/edit', \App\Livewire\Admin\Roles\EditRole::class)->name('roles.edit')->middleware('can:update roles');
+//        Route::get('/permissions', \App\Livewire\Admin\Permissions::class)->name('permissions.index')->middleware('can:view permissions');
+//        Route::get('/permissions/create', \App\Livewire\Admin\Permissions\CreatePermission::class)->name('permissions.create')->middleware('can:create permissions');
+//        Route::get('permissions/{permission}/edit', \App\Livewire\Admin\Permissions\EditPermission::class)->name('permissions.edit')->middleware('can:update permissions');
+//    });
     Route::prefix('admin')->as('admin.')->group(function (): void {
-        Route::get('/', \App\Livewire\Admin\Index::class)->middleware(['auth', 'verified'])->name('index')->middleware('can:access dashboard');
+        Route::get('/', \App\Livewire\Admin\Index::class)->middleware(['auth', 'verified'])->name('index')->middleware('permission:access dashboard');
 //        Route::get('/', \App\Livewire\Admin\Index::class)->name('admin')->middleware(['auth', 'verified', 'permission:access dashboard']);
-        Route::get('/users', \App\Livewire\Admin\Users::class)->name('users.index')->middleware('can:view users');
-        Route::get('/users/create', \App\Livewire\Admin\Users\CreateUser::class)->name('users.create')->middleware('can:create users');
-        Route::get('/users/{user}', \App\Livewire\Admin\Users\ViewUser::class)->name('users.show')->middleware('can:view users');
-        Route::get('/users/{user}/edit', \App\Livewire\Admin\Users\EditUser::class)->name('users.edit')->middleware('can:update users');
-        Route::get('/roles', \App\Livewire\Admin\Roles::class)->name('roles.index')->middleware('can:view roles');
-        Route::get('/roles/create', \App\Livewire\Admin\Roles\CreateRole::class)->name('roles.create')->middleware('can:create roles');
-        Route::get('/roles/{role}/edit', \App\Livewire\Admin\Roles\EditRole::class)->name('roles.edit')->middleware('can:update roles');
-        Route::get('/permissions', \App\Livewire\Admin\Permissions::class)->name('permissions.index')->middleware('can:view permissions');
-        Route::get('/permissions/create', \App\Livewire\Admin\Permissions\CreatePermission::class)->name('permissions.create')->middleware('can:create permissions');
-        Route::get('permissions/{permission}/edit', \App\Livewire\Admin\Permissions\EditPermission::class)->name('permissions.edit')->middleware('can:update permissions');
+        Route::get('/users', \App\Livewire\Admin\Users::class)->name('users.index')->middleware('permission:view users');
+        Route::get('/users/create', \App\Livewire\Admin\Users\CreateUser::class)->name('users.create')->middleware('permission:create users');
+        Route::get('/users/{user}', \App\Livewire\Admin\Users\ViewUser::class)->name('users.show')->middleware('permission:view users');
+        Route::get('/users/{user}/edit', \App\Livewire\Admin\Users\EditUser::class)->name('users.edit')->middleware('permission:update users');
+        Route::get('/roles', \App\Livewire\Admin\Roles::class)->name('roles.index')->middleware('permission:view roles');
+        Route::get('/roles/create', \App\Livewire\Admin\Roles\CreateRole::class)->name('roles.create')->middleware('permission:create roles');
+        Route::get('/roles/{role}/edit', \App\Livewire\Admin\Roles\EditRole::class)->name('roles.edit')->middleware('permission:update roles');
+        Route::get('/permissions', \App\Livewire\Admin\Permissions::class)->name('permissions.index')->middleware('permission:view permissions');
+        Route::get('/permissions/create', \App\Livewire\Admin\Permissions\CreatePermission::class)->name('permissions.create')->middleware('permission:create permissions');
+        Route::get('permissions/{permission}/edit', \App\Livewire\Admin\Permissions\EditPermission::class)->name('permissions.edit')->middleware('permission:update permissions');
     });
 });
 

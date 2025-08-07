@@ -4,11 +4,14 @@
             <div class="flex items-center space-x-4">
                 <a href="{{ route('home') }}">
                     <x-app-logo-icon />
+
+
+
                 </a>
-                <a href="/document-uploads" aria-current="page" class="rounded-md bg-blue-500 px-3 py-2 text-sm font-medium text-white">All Documents</a>
-                </a>
-                <a href="/all-post" aria-current="page" class="rounded-md bg-blue-500 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
+                <a href="/document-uploads" aria-current="page" class="text-gray-600 hover:text-blue-500">All Documents</a>
+                <a href="/portfoliodash" aria-current="page" class="text-gray-600 hover:text-blue-500">Portfolio Dashboard</a>
             </div>
         </div>
     </div>
 </nav>
+

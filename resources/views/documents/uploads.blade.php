@@ -23,7 +23,12 @@
                 </div>
             @endif
             <h1 class="text-3xl font-bold mb-4">All Documents</h1>
-            <br>
+
+{{--                <i class="fa-duotone fa-truck" style="font-size: 30px !important; --fa-primary-color: #B1B1B1; --fa-secondary-color: #FFD700; --fa-primary-opacity: 1; --fa-secondary-opacity: 1;"></i>--}}
+
+
+
+                <br>
             <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data" class="mb-8">
                 @csrf
                 <input type="file" name="document" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
