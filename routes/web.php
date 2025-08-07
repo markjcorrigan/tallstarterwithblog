@@ -32,13 +32,14 @@ Route::get('/simulate-500', function () {
 
 
 
-//Route::get('/css/fontawesome', function () {
-//    $css = Cache::remember('fontawesome_css', 60, function () {
-//        return file_get_contents(public_path('fontawesome6/css/all.css'));
-//    });
-//
-//    return response($css)->header('Content-Type', 'text/css');
-//});
+Route::get('/fontawesome6/fontawesome6/pro/css/all.min.css', function () {
+    $css = Cache::remember('fontawesome_css', 60, function () {
+        return file_get_contents(public_path('fontawesome6/fontawesome6/pro/css/all.min.css'));
+    });
+    return response($css)->header('Content-Type', 'text/css');
+});
+
+
 
 
 
