@@ -23,7 +23,10 @@ class CreateRole extends Component
 
     public function mount(): void
     {
+//        $this->authorize('create roles');
         $this->authorize('create roles');
+        $this->selectedPermissions = Permission::pluck('id')->map(fn ($id) => (string) $id)->toArray();
+
     }
 
     public function createRole(): void

@@ -5,7 +5,10 @@
              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
                 <p class="wow fadeInUp" data-wow-delay=".4s">
-                   Click for the detail
+                    @auth
+                        <a href="{{ route('user.add.post') }}"><u>share your ideas</u></a>
+                    @endauth
+
                 </p>
              </div>
           </div>
@@ -15,7 +18,7 @@
 {{--             $posts = App\Models\BlogPost::Latest()->limit(3)->get();--}}
 {{--         @endphp--}}
            @php
-               $posts = App\Models\BlogPost::where('approved', 1)->latest()->get();
+               $posts = App\Models\BlogPost::where('approved', 1)->latest()->limit(3)->get();
            @endphp
 
        @unless (count($posts) == 0)

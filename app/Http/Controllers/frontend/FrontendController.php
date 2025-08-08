@@ -71,12 +71,6 @@ class FrontendController extends Controller
 
 
 
-//
-//    public function BlogDetails($slug){
-//        $post = BlogPost::where('post_slug', $slug)->first();
-//        $rposts =  BlogPost::Latest()->limit(3)->get();
-//        return view('frontend.blog.post_details', compact('post', 'rposts'));
-//    } // End method
 
     public function BlogDetails($slug)
     {
