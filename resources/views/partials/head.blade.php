@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="{{ asset('fontawesome6\css\all.min.css') }}">
 
 
+
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @fluxAppearance
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

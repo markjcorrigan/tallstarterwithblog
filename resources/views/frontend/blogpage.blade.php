@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{ url('css/fontawesome') }}">
 
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
+
 </head>
 
 <body>

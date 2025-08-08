@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Artisan;
 
 
 
+
+
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
@@ -151,16 +153,7 @@ Route::get('/useraddpost', [UserPostsBlogPostController::class, 'UserAddPost'])-
 Route::post('/userstorepost', [UserPostsBlogPostController::class,'UserStorePost'])->name('user.store.post')->middleware(['auth', 'verified']);
 Route::get('/search', [UserPostsBlogPostController::class, 'usersearch'])->name('usersearch');
 
-Route::get('/post/details', function () {
-    $firstPost = \App\Models\BlogPost::first();
-    if ($firstPost) {
-        return redirect()->to('/post/details/' . $firstPost->post_slug);
-    } else {
-        return response()->view('errors.no-blogs-found');
-    }
-});
-
-
+Route::get('/post/details', [UserPostsBlogPostController::class, 'firstPost'])->name('first.post');
 
 
 

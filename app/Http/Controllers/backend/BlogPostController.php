@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\BlogPost;
+use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,6 +13,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Cache;
+
 
 
 
@@ -59,6 +62,20 @@ class BlogPostController extends Controller
 
         return redirect()->route('all.post')->with($notification);
     } // End method
+
+//    public function showFirstPost()
+//    {
+//        $firstPost = BlogPost::all()->first();
+////dd($firstPost);
+//        if ($firstPost) {
+//            return redirect()->to('/post/details/' . $firstPost->post_slug);
+//        } else {
+//            return response()->view('errors.no-blogs-found');
+//        }
+//    }
+
+
+
 
 
     public function AllPost(){

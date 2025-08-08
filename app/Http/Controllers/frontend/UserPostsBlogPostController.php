@@ -82,126 +82,33 @@ class UserPostsBlogPostController extends Controller
 
 
 
-    public function postDetails($id)
+    public function firstPost()
     {
-        $post = BlogPost::find($id);
-        return view('frontend.blog.post_details', compact('post'));
+        $firstPost = \App\Models\BlogPost::all()->first();
+        if ($firstPost) {
+            return redirect()->to('/post/details/' . $firstPost->post_slug);
+        } else {
+            return response()->view('errors.no-blogs-found');
+        }
     }
 
 
 
 
-//    public function BlogDetails($slug){
+
+
+
+
+//    public function firstBlog($id)
+//    {
 //        $post = BlogPost::where('post_slug', $slug)->first();
 //        $rposts =  BlogPost::Latest()->limit(3)->get();
+////        return view('frontend.blog.post_details', compact('post', 'rposts'));
+////        $post = BlogPost::find($id);
 //        return view('frontend.blog.post_details', compact('post', 'rposts'));
-//    } // End method
-
-//    public function AllPost(){
-////        Gate::authorize('is-super-admin');
-//        $posts = BlogPost::with('author')->Latest()->get();
-//        return view('backend.blog.all_posts', compact('posts'));
-//    }
-
-//    public function AllApprovedPosts()
-//    {
-//        // Gate::authorize('is-super-admin');
-//        $posts = BlogPost::with('author')
-//            ->where('approved', 1)
-//            ->latest()
-//            ->get();
-//
-//        return view('frontend.blog.all_posts', compact('posts'));
+////        return view('frontend.blog.post_details', compact('post'));
 //    }
 
 
 
-//    public function EditPost($id){
-////        Gate::authorize('is-super-admin');
-//        $post = BlogPost::findOrFail($id);
-//        return view('backend.blog.edit_post', compact('post'));
-//    } // End method
-//
-//
-//    public function UpdatePost(Request $request, $id){
-////        if (!Gate::allows('is-super-admin')) {
-////            abort(403, 'Unauthorized action.');
-////        }
-//
-//        $validatedData = $request->validate([
-//            'post_title' => 'required|string|max:255',
-//            'post_tags' => 'required|string',
-//            'post_description' => 'required|string',
-//            'post_photo' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-//        ]);
-//
-//        $post = BlogPost::find($request->id);
-//
-//        if($request->hasFile('post_photo')){
-//            // Delete the old photo
-//            if ($post->photo) {
-//                unlink(public_path($post->photo));
-//            }
-//
-//            // Upload the new photo
-//            $file = $request->file('post_photo');
-//            $imageName = 'post_'.hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
-//            $manager = new ImageManager(new Driver());
-//            $img = $manager->read($file);
-//            $img = $img->resize(409,368);
-//            $img = $img->toJpeg(80)->save(base_path('public/uploads/blog/'.$imageName));
-//            $imagePath = 'uploads/blog/'.$imageName;
-//            $post->photo = $imagePath;
-//        }
-//
-//        $post->user_id = Auth::user()->id;
-//        $post->post_title = $validatedData['post_title'];
-//        $post->post_slug = strtolower(str_replace(' ', '-', $validatedData['post_title']));
-//        $post->post_tags = $validatedData['post_tags'];
-//        $post->post_description = $validatedData['post_description'];
-//        $post->save();
-//
-//        $notification = [
-//            'message' => 'BlogPost Updated Successfully!',
-//            'alert-type' => 'info'
-//        ];
-//
-//        return redirect()->route('all.post')->with($notification);
-//    } // End method
-//
-//
-//
-//
-//
-//    public function DeletePost($id){
-////        Gate::authorize('is-super-admin');
-//        $oldPostPhoto = BlogPost::find($id);
-//        unlink($oldPostPhoto->photo);
-//
-//        BlogPost::findOrFail($id)->delete();
-//        $notification = [
-//            'message' => 'BlogPost Deleted Successfully!',
-//            'alert-type' => 'info'
-//        ];
-//        return redirect()->back()->with($notification);
-//    } // End method
-//
-////    public function approve(BlogPost $blogPost)
-////    {
-////        $blogPost->update(['approved' => true]);
-////
-////        return redirect()->route('all-post')->with('success', 'Blog post approved successfully');
-////    }
-//
-//    public function updatePostStatus(Request $request)
-//    {
-//        $post = BlogPost::find($request->post_id);
-//        $post->approved = $request->approved;
-//        $post->save();
-//
-//        // Forget the cache for approved posts
-//        Cache::forget('approved_posts');
-//
-//        return response()->json(['status' => 200, 'message' => 'Post status updated successfully']);
-//    }
 }

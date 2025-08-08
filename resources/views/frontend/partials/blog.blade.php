@@ -1,4 +1,27 @@
 <section class="blog-section" id="blog-section">
+    <style>
+        .btn.tj-btn-primary {
+            position: relative;
+        }
+
+        .btn.tj-btn-primary::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px; /* Changed from 2px to 1px */
+            bottom: 0;
+            left: 50%;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn.tj-btn-primary:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+
+    </style>
     <div class="container">
        <div class="row">
           <div class="col-md-12">
@@ -17,7 +40,7 @@
                         </span>&nbsp;&nbsp;&nbsp;
                  <i class="far fa-long-arrow-right"></i>
                  <span class="header-button ms-3">
-                            <a href="{{ url('/post/details') }}" class="btn tj-btn-primary">Blog Details</a>
+                            <a href="{{ route('first.post') }}" class="btn tj-btn-primary">Blog Details</a>
                         </span>&nbsp;&nbsp;&nbsp;
                 <p class="wow fadeInUp" data-wow-delay=".4s">
                     @auth

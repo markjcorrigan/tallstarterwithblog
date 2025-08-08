@@ -59,6 +59,7 @@
                 </a>
              </div>
 
+              <!--NB below is the pop down menu for the page that I am removing-->
              <div class="header-info-list d-none d-md-inline-block">
                 <ul class="ul-reset">
                    <li><a href="mailto:{{$siteSettings->email}}">{{$siteSettings->email}}</a></li>
@@ -66,21 +67,21 @@
              </div>
 
              <div class="header-menu">
-{{--                <nav>--}}
-{{--                   <ul>--}}
-{{--                      <li><a href="#services-section">Services</a></li>--}}
-{{--                      <li><a href="#works-section">Works</a></li>--}}
-{{--                      <li><a href="#resume-section">Resume</a></li>--}}
-{{--                      <li><a href="#skills-section">Skills</a></li>--}}
-{{--                      <li><a href="#testimonials-section">Testimonials</a></li>--}}
-{{--                      <li><a href="#contact-section">Contact</a></li>--}}
-{{--                   </ul>--}}
-{{--                </nav>--}}
+                <nav>
+                   <ul>
+                      <li><a href="#services-section">Services</a></li>
+                      <li><a href="#works-section">Works</a></li>
+                      <li><a href="#resume-section">Resume</a></li>
+                      <li><a href="#skills-section">Skills</a></li>
+                      <li><a href="#testimonials-section">Testimonials</a></li>
+                      <li><a href="#contact-section">Contact</a></li>
+                   </ul>
+                </nav>
              </div>
 
-             <div class="header-button">
-                <a href="/blog" class="btn tj-btn-primary">Back to Blog!</a>
-             </div>
+{{--             <div class="header-button">--}}
+{{--                <a href="/blog" class="btn tj-btn-primary">Back to Blog!</a>--}}
+{{--             </div>--}}
 
              <div class="menu-bar d-lg-none">
                 <button>

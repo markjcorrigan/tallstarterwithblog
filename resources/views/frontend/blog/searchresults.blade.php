@@ -29,6 +29,29 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}" />
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+    <style>
+        .btn.tj-btn-primary {
+            position: relative;
+        }
+
+        .btn.tj-btn-primary::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px; /* Changed from 2px to 1px */
+            bottom: 0;
+            left: 50%;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn.tj-btn-primary:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -74,10 +97,9 @@
                     <span class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">
                              </span>
                     <span class="header-button ms-3">
-                            <a href="{{ url('/blog') }}" class="btn tj-btn-primary">Recent Blog</a>
+                            <a href="{{ url('/blog') }}" class="btn tj-btn-primary">Blog</a>
                         </span>&nbsp;&nbsp;&nbsp;
-                    <i class="far fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;
-                    <span class="current-item">Blog Details</span>
+
                 </div>
             </div>
         </div>
