@@ -103,6 +103,7 @@
         @endguest
         @auth
         <flux:navbar.item class="text-black" style="color: black" href="{{ route('pmwayauth') }}" :current="request()->routeIs('pmwayauth')"> PMWay </flux:navbar.item>
+        <flux:navbar.item class="text-black" style="color: black  !important" href="{{ route('blog') }}" :current="request()->routeIs('blog')"> Blog </flux:navbar.item>
 {{--            <flux:navbar.item class="text-black" style="color: black" href="{{ route('portfoliodash') }}" :current="request()->routeIs('portfoliodash')">  <i class="fa-duotone fa-truck" style="font-size: 30px !important; --fa-primary-color: #3498db; --fa-secondary-color: #f1c40f; --fa-primary-opacity: 1; --fa-secondary-opacity: 1;"></i>--}}
 {{--            </flux:navbar.item>--}}
         @endauth

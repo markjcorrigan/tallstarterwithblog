@@ -31,6 +31,11 @@ class FrontendController extends Controller
     }
 
 
+    //I added this to give users a full list of posts
+    public function UserAllPost(){
+        $posts = BlogPost::where('approved', 1)->latest()->get();
+        return view('frontend.blog.all_posts', compact('posts'));
+    } // End method
 
 
 //    public function blog()
@@ -71,14 +76,15 @@ class FrontendController extends Controller
 
 
 
-
+//Below from source code
     public function BlogDetails($slug)
     {
         $post = BlogPost::where('post_slug', $slug)->first();
         if (!$post) {
             abort(404);
         }
-        $rposts = BlogPost::Latest()->limit(3)->get();
+//        $rposts = BlogPost::Latest()->limit(3)->get();
+        $rposts = BlogPost::Latest()->get();
         $comments = Comment::where('post_id', $post->id)->where('status', 1)->get();
         return view('frontend.blog.post_details', compact('post', 'rposts', 'comments'));
     }

@@ -60,12 +60,42 @@ class UserPostsBlogPostController extends Controller
         return redirect()->route('blog')->with($notification);
     } // End method
 
+    public function usersearch(Request $request)
+    {
+        $query = $request->input('search');
+        if ($query) {
+            $posts = BlogPost::where('approved', 1)
+                ->where(function ($q) use ($query) {
+                    $q->where('post_title', 'LIKE', '%' . $query . '%')
+                        ->orWhere('post_tags', 'LIKE', '%' . $query . '%')
+                        ->orWhere('post_description', 'LIKE', '%' . $query . '%')
+                        ->orWhere('post_slug', 'LIKE', '%' . $query . '%');
+                })
+                ->latest()
+                ->paginate(6);
+        } else {
+            $posts = BlogPost::where('approved', 1)->latest()->paginate(6);
+        }
+        $rposts = BlogPost::where('approved', 1)->latest()->limit(5)->get();
+        return view('frontend.blog.searchresults', compact('posts', 'rposts', 'query'));
+    }
 
-    public function BlogDetails($slug){
-        $post = BlogPost::where('post_slug', $slug)->first();
-        $rposts =  BlogPost::Latest()->limit(3)->get();
-        return view('frontend.blog.post_details', compact('post', 'rposts'));
-    } // End method
+
+
+    public function postDetails($id)
+    {
+        $post = BlogPost::find($id);
+        return view('frontend.blog.post_details', compact('post'));
+    }
+
+
+
+
+//    public function BlogDetails($slug){
+//        $post = BlogPost::where('post_slug', $slug)->first();
+//        $rposts =  BlogPost::Latest()->limit(3)->get();
+//        return view('frontend.blog.post_details', compact('post', 'rposts'));
+//    } // End method
 
 //    public function AllPost(){
 ////        Gate::authorize('is-super-admin');

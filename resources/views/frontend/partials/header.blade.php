@@ -29,14 +29,14 @@
 {{--                   </ul>--}}
 {{--                </nav>--}}
              </div>
-             <div class="header-button">
+{{--             <div class="header-button">--}}
 
 {{--                 <a href="{{ url('/') }}" class="btn tj-btn-primary">--}}
-                 <a href="{{ url('/') }}" class="btn tj-btn-primary" >
-                    Home
-                 </a>
+{{--                 <a href="{{ url('/') }}" class="btn tj-btn-primary" >--}}
+{{--                    Home--}}
+{{--                 </a>--}}
 
-             </div>
+{{--             </div>--}}
              <div class="menu-bar d-lg-none">
                 <button>
                    <span></span>

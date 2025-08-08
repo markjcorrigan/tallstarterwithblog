@@ -72,15 +72,15 @@
                <div class="row justify-content-center">
                    <div class="col text-center">
                        <div class="breadcrumb_content d-inline-flex flex-column align-items-center">
-                           <h2 class="title wow fadeInUp" data-wow-delay=".3s">{{ $post->post_title }}</h2>
+                           <h2 class="title wow fadeInUp" data-wow-delay=".3s">{{ $post->post_title }}</h2><br><br>
                            <div class="d-flex justify-content-between align-items-center">
                         <span class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">
                              </span>
                                <span class="header-button ms-3">
                             <a href="{{ url('/blog') }}" class="btn tj-btn-primary">Blog Listing</a>
                         </span>&nbsp;&nbsp;&nbsp;
-                            <i class="far fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;
-                            <span class="current-item">Blog Details</span>
+                            <i class="far fa-long-arrow-left"></i>&nbsp;&nbsp;&nbsp;
+                            <span class="current-item">Click Blog Listing to go back</span>
 
                            </div>
                        </div>
@@ -142,7 +142,9 @@
                       <div class="tj-post__meta entry-meta">
                          <span><i class="fa-light fa-user"></i> <a href="#">By {{ $post->author->name }}</a></span>
                          <span><i class="fa-light fa-calendar-days"></i> {{ $post->created_at->format('D M, Y') }}</span>
-                       <span><i class="fa-light fa-comments"></i><a href="#">Comments ({{ count($comments) }})</a></span>
+{{--                       <span><i class="fa-light fa-comments"></i><a href="#">Comments ({{ count($comments) }})</a></span>--}}
+                          <span><i class="fa-light fa-comments"></i><a href="#"> ({{ count($comments ?? []) }})</a></span>
+
                       </div>
                       <h3 class="tj-post__title entry-title">{{ $post->post_title }} </h3>
 
@@ -261,69 +263,114 @@
                 </div>
              </div>
           </div>
-          <div class="col-lg-4">
-             <div class="tj_main_sidebar">
-                <div class="sidebar_widget widget_search wow fadeInUp" data-wow-delay=".3s">
-                   <div class="tj-widget__search form_group">
-                      <form class="search-form" action="#" method="get">
-                         <input type="search" id="search" name="search" placeholder="Search..." />
-                         <button class="search-btn" type="submit"><i
-                               class="fa-light fa-magnifying-glass"></i></button>
-                      </form>
+           <div class="col-lg-4">
+               <div class="tj_main_sidebar">
+                   <div class="sidebar_widget widget_search wow fadeInUp" data-wow-delay=".3s">
+                       <div class="tj-widget__search form_group">
+                           <form class="search-form" action="{{ route('usersearch') }}" method="get">
+                               <input type="search" id="search" name="search" placeholder="Search..." value="{{ request()->input('search') }}" />
+                               <button class="search-btn" type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
+                           </form>
+                       </div>
                    </div>
-                </div>
-
-
-                <div class="sidebar_widget tj_recent_posts wow fadeInUp" data-wow-delay=".3s">
-                   <div class="widget_title">
-                      <h3 class="title">Recent post</h3>
+                   <div class="sidebar_widget tj_recent_posts wow fadeInUp" data-wow-delay=".3s">
+                       <div class="widget_title">
+                           <h3 class="title">Recent post</h3>
+                       </div>
+                       <ul>
+                           @foreach ($rposts as $rpost)
+                               @php $comments = App\Models\Comment::where('post_id', $rpost->id)->where('status', 1)->get(); @endphp
+                               <li>
+                                   <div class="recent-post_thumb">
+                                       <a href="/post/details/{{ $rpost->post_slug }}">
+                                           <img src="{{ asset($rpost->photo) }}" alt="" />
+                                       </a>
+                                   </div>
+                                   <div class="recent-post_content">
+                                       <div class="tj-post__meta entry-meta">
+                                           <span><i class="fa-light fa-calendar-days"></i> {{ $rpost->created_at->format('M, Y') }} </span>
+                                           <span><i class="fa-light fa-comments"></i><a href="#"> ({{ count($comments) }})</a></span>
+                                       </div>
+                                       <h4 class="recent-post_title">
+                                           <a href="/post/details/{{ $rpost->post_slug }}">{{ Str::limit($rpost->post_title, 30) }}</a>
+                                       </h4>
+                                   </div>
+                               </li>
+                           @endforeach
+                       </ul>
                    </div>
-
-                   <ul>
-                   @foreach ($rposts as $rpost)
-                   @php
-                     $comments = App\Models\Comment::where('post_id', $rpost->id)->where('status', 1)->get();
-                   @endphp
-                        <li>
-                            <div class="recent-post_thumb">
-                            <a href="blog-details.html">
-                                <img src="{{asset($rpost->photo)}}" alt="" />
-                            </a>
-                            </div>
-
-                            <div class="recent-post_content">
-                            <div class="tj-post__meta entry-meta">
-                                <span><i class="fa-light fa-calendar-days"></i> {{$rpost->created_at->format('M, Y')}} </span>
-                                <span><i class="fa-light fa-comments"></i><a href="#"> ({{ count($comments) }})</a></span>
-                            </div>
-                            <h4 class="recent-post_title">
-                                <a href="/post/details/{{ $rpost->post_slug }}">{{ Str::limit($rpost->post_title, 30) }}</a>
-                            </h4>
-                            </div>
-                        </li>
-                   @endforeach
-
-
-                   </ul>
-                </div>
-
-
-                <div class="sidebar_widget widget_tag_cloud wow fadeInUp" data-wow-delay=".3s">
-                   <div class="widget_title">
-                      <h3 class="title">Popular tag</h3>
+                   <div class="sidebar_widget widget_tag_cloud wow fadeInUp" data-wow-delay=".3s">
+                       <div class="widget_title">
+                           <h3 class="title">Popular tag</h3>
+                       </div>
+                       <div class="tagcloud">
+                           @php $tags = explode(',', $post->post_tags) @endphp
+                           @foreach ($tags as $tag)
+                               <a href="#"> {{ $tag }} </a>
+                           @endforeach
+                       </div>
                    </div>
+               </div>
+           </div>
 
-                   <div class="tagcloud">
-                    @foreach ($tags as $tag)
-                        <a href="#"> {{ $tag }} </a>
-                    @endforeach
 
+           <div class="row">
+               @if (isset($posts))
+                   <div class="row">
+                       @if ($posts->isNotEmpty())
+                           @foreach ($posts as $post)
+                               @php $comments = App\Models\Comment::where('post_id', $post->id)->where('status', 1)->get(); @endphp
+                               <div class="col-lg-4 col-md-6">
+                                   <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
+                                       <div class="blog-thumb">
+                                           <a href="/post/details/{{ $post->post_slug }}">
+                                               <img src="{{ asset($post->photo) }}" alt="" />
+                                           </a>
+                                       </div>
+                                       <div class="blog-content">
+                                           <div class="blog-meta">
+                                               <ul class="ul-reset">
+                                                   <li><i class="fa-light fa-calendar-days"></i> {{ $post->created_at->format('D M, Y') }} </li>
+                                                   <li><i class="fa-light fa-comments"></i> <a href="#">Comment ({{ count($comments ?? []) }})</a></li>
+                                               </ul>
+                                           </div>
+                                           <h3 class="blog-title"><a href="/post/details/{{ $post->post_slug }}">{{ Str::limit($post->post_title, 40) }}</a></h3>
+                                       </div>
+                                   </div>
+                               </div>
+                           @endforeach
+                           {{ $posts->links() }}
+                       @else
+                           <p>No Post found!! </p>
+                       @endif
                    </div>
+               @endif
+
+           </div>
+
+
+
+
+
+
+
+
+
+               {{--           <div class="sidebar_widget widget_tag_cloud wow fadeInUp" data-wow-delay=".3s">--}}
+{{--                   <div class="widget_title">--}}
+{{--                      <h3 class="title">Popular tag</h3>--}}
+{{--                   </div>--}}
+
+{{--                   <div class="tagcloud">--}}
+{{--                    @foreach ($tags as $tag)--}}
+{{--                        <a href="#"> {{ $tag }} </a>--}}
+{{--                    @endforeach--}}
+
+{{--                   </div>--}}
                 </div>
              </div>
           </div>
-       </div>
-    </div>
+
  </section>
  <!-- END: Blog Section -->
 

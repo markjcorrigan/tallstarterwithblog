@@ -18,10 +18,13 @@ use App\Http\Controllers\frontend\UserPostsBlogPostController;
 use App\Livewire\About;
 use App\Livewire\PrivateOne;
 use App\Livewire\Laws;
+use App\Models\BlogPost;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
+
+
 
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -146,6 +149,22 @@ Route::put('/documents/{id}', [DocumentController::class, 'update'])->name('docu
 Route::post('/update-post-status', [BlogPostController::class, 'updatePostStatus'])->name('update.post.status')->middleware(['auth', 'verified', 'permission:blog approved']);
 Route::get('/useraddpost', [UserPostsBlogPostController::class, 'UserAddPost'])->name('user.add.post')->middleware(['auth', 'verified']);
 Route::post('/userstorepost', [UserPostsBlogPostController::class,'UserStorePost'])->name('user.store.post')->middleware(['auth', 'verified']);
+Route::get('/search', [UserPostsBlogPostController::class, 'usersearch'])->name('usersearch');
+
+Route::get('/post/details', function () {
+    $firstPost = \App\Models\BlogPost::first();
+    if ($firstPost) {
+        return redirect()->to('/post/details/' . $firstPost->post_slug);
+    } else {
+        return response()->view('errors.no-blogs-found');
+    }
+});
+
+
+
+
+
+
 Route::controller(BlogPostController::class)->group(function(){
     Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'permission:all post'])->name('all.post');
     Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'permission:add post'])->name('add.post');

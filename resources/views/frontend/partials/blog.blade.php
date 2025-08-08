@@ -3,10 +3,28 @@
        <div class="row">
           <div class="col-md-12">
              <div class="section-header text-center">
-                <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
+
+
+
+
+
+                <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">6 latest blogs</h2>
+                 <br><br>
+                 <span class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">
+                             </span>
+                 <span class="header-button ms-3">
+                            <a href="{{ url('/') }}" class="btn tj-btn-primary">Home</a>
+                        </span>&nbsp;&nbsp;&nbsp;
+                 <i class="far fa-long-arrow-right"></i>
+                 <span class="header-button ms-3">
+                            <a href="{{ url('/post/details') }}" class="btn tj-btn-primary">Blog Details</a>
+                        </span>&nbsp;&nbsp;&nbsp;
                 <p class="wow fadeInUp" data-wow-delay=".4s">
                     @auth
-                        <a href="{{ route('user.add.post') }}"><u>share your ideas</u></a>
+                        <span class="header-button ms-3">
+                            <a href="{{ route('user.add.post') }}" class="btn tj-btn-primary">Share Your Ideas</a>
+                        </span>&nbsp;&nbsp;&nbsp;
+{{--                        <a href="{{ route('user.add.post') }}"><u>share your ideas</u></a>--}}
                     @endauth
 
                 </p>
@@ -18,7 +36,7 @@
 {{--             $posts = App\Models\BlogPost::Latest()->limit(3)->get();--}}
 {{--         @endphp--}}
            @php
-               $posts = App\Models\BlogPost::where('approved', 1)->latest()->limit(3)->get();
+               $posts = App\Models\BlogPost::where('approved', 1)->latest()->limit(6)->get();
            @endphp
 
        @unless (count($posts) == 0)
