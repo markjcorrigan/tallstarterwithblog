@@ -61,29 +61,62 @@
    <!-- end: Back To Top -->
 
    <!-- HEADER START -->
-        @include('frontend.partials.header')
+{{--        @include('frontend.partials.header')--}}
    <!-- HEADER END -->
 
    <main class="site-content" id="content">
 
     <!-- START: Breadcrumb Area -->
-    <section class="breadcrumb_area" data-bg-image="{{ asset('frontend/assets/img/breadcrumb/breadcrumb-bg.jpg') }}"
-    data-bg-color="#140C1C">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            <div class="breadcrumb_content d-flex flex-column align-items-center">
-                <h2 class="title wow fadeInUp" data-wow-delay=".3s" style="text-align: center">{{ $post->post_title }}</h2>
-                <div class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">
-                    <span><a href="/">Home</a></span>
-                    <i class="far fa-long-arrow-right"></i>
-                    <span class="current-item">Blog Details</span>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-    </section>
+       <section class="breadcrumb_area" data-bg-image="{{ asset('frontend/assets/img/breadcrumb/breadcrumb-bg.jpg') }}" data-bg-color="#140C1C">
+           <div class="container">
+               <div class="row justify-content-center">
+                   <div class="col text-center">
+                       <div class="breadcrumb_content d-inline-flex flex-column align-items-center">
+                           <h2 class="title wow fadeInUp" data-wow-delay=".3s">{{ $post->post_title }}</h2>
+                           <div class="d-flex justify-content-between align-items-center">
+                        <span class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">
+                             </span>
+                               <span class="header-button ms-3">
+                            <a href="{{ url('/blog') }}" class="btn tj-btn-primary">Blog Listing</a>
+                        </span>&nbsp;&nbsp;&nbsp;
+                            <i class="far fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;
+                            <span class="current-item">Blog Details</span>
+
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+
+
+
+       {{--    <section class="breadcrumb_area" data-bg-image="{{ asset('frontend/assets/img/breadcrumb/breadcrumb-bg.jpg') }}"--}}
+{{--    data-bg-color="#140C1C">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col">--}}
+{{--            <div class="breadcrumb_content d-flex flex-column align-items-center">--}}
+{{--                <h2 class="title wow fadeInUp" data-wow-delay=".3s" style="text-align: center">{{ $post->post_title }}</h2>--}}
+{{--                <div class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">--}}
+{{--                    <span><a href="/blog">Blog Listing</a></span>--}}
+{{--                    <i class="far fa-long-arrow-right"></i>--}}
+{{--                    <span class="current-item">Blog Details</span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--                <div class="header-button">--}}
+
+{{--                                     <a href="{{ url('/') }}" class="btn tj-btn-primary">--}}
+{{--                    <a href="{{ url('/blog') }}" class="btn tj-btn-primary" >--}}
+{{--                        Blog Listing--}}
+{{--                    </a>--}}
+
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    </section>--}}
     <!-- END: Breadcrumb Area -->
 
     @php
@@ -98,9 +131,11 @@
              <div class="tj-post-details__container">
                 <article class="tj-single__post">
                    <div class="tj-post__thumb">
-                      <img src="{{asset($post->photo)}}" alt="" style="width: 1000px; height:400px;" />
+{{--                      <img src="{{asset($post->photo)}}" alt="" style="width: 1000px; height:400px;" />--}}
+                       <img src="{{asset($post->photo)}}" alt="" style="width: 100%; height:auto;" />
 
-{{--                      <a href="#" class="category">Tutorial</a>--}}
+
+                       {{--                      <a href="#" class="category">Tutorial</a>--}}
                    </div>
 
                    <div class="tj-post__content">

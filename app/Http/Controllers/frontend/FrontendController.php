@@ -9,6 +9,8 @@ use App\Models\Document;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Cache;
+
 use Illuminate\Support\Facades\Storage;
 
 use phpDocumentor\Reflection\Types\Void_;
@@ -18,14 +20,27 @@ class FrontendController extends Controller
 //    public function homepage(){
 //        return view('frontend.homepage');
 //    } // End method
+
+
     public function blog()
     {
-        // Your blog logic here
-
-        $posts = BlogPost::latest()->get();
-//        dd($posts); // This will dump the posts and exit the script
+        $posts = BlogPost::where('approved', 1)->latest()->get();
         return view('frontend.blogpage', compact('posts'));
+//        dd($posts); // Dump the posts to see what's being retrieved
+
     }
+
+
+
+
+//    public function blog()
+//    {
+//        $posts = Cache::remember('approved_posts', 60, function () {
+//            return BlogPost::where('approved', 1)->latest()->get();
+//        });
+//        return view('frontend.blogpage', compact('posts'));
+//    }
+
 //    public function blog(): View
 //    {
 //        return view('frontend.blogpage'); // or any other view you want to display

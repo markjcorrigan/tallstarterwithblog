@@ -93,7 +93,16 @@
 
       <!-- BLOG SECTION STAR -->
         @include('frontend.partials.blog')
-      <!-- BLOG SECTION END -->
+
+{{--       @include('frontend.partials.blog', ['posts' => $posts])--}}
+
+{{--   @foreach($posts as $post)--}}
+{{--           // Display post data--}}
+{{--           <h2>{{ $post->post_title }}</h2>--}}
+{{--           <p>{{ $post->post_description }}</p>--}}
+{{--       @endforeach--}}
+
+       <!-- BLOG SECTION END -->
 
 {{--      <!-- CONTACT SECTION START -->--}}
 {{--        @include('frontend.partials.contact')--}}

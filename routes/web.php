@@ -20,8 +20,64 @@ use App\Livewire\Laws;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Artisan;
+
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
+
+
+Route::get('/optimize', function () {
+    Artisan::call('queue:restart');
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('optimize:clear');
+    Artisan::call('optimize');
+    Artisan::call('config:clear'); // added config clear before dump autoload
+    exec('composer dump-autoload');
+    return 'Optimization completed!';
+});
+
+//Route::get('/dump-autoload', function () {
+//    try {
+//        exec('composer dump-autoload', $output, $returnVar);
+//        if ($returnVar === 0) {
+//            return 'Composer autoload dumped successfully!';
+//        } else {
+//            return 'Error dumping composer autoload: ' . implode("\n", $output);
+//        }
+//    } catch (\Exception $e) {
+//        return 'Error dumping composer autoload: ' . $e->getMessage();
+//        }
+//});
+
+
+Route::get('/route-cache', function () {
+    try {
+        $exitCode = Artisan::call('route:cache');
+        $output = Artisan::output();
+        if ($exitCode === 0) {
+            return 'Route cache generated!';
+        } else {
+            return 'Error generating route cache: ' . $output;
+        }
+    } catch (\Exception $e) {
+        return 'Error generating route cache: ' . $e->getMessage();
+    }
+});
+
+
+Route::get('/route-clear', function () {
+    try {
+        Artisan::call('route:clear');
+        return 'Route cache cleared!';
+    } catch (\Exception $e) {
+        return 'Error clearing route cache: ' . $e->getMessage();
+        }
+});
+
+
 
 
 //Route::redirect('/', '/pmwayguest')->withoutMiddleware([Authenticate::class]);
@@ -85,6 +141,10 @@ Route::put('/documents/{id}', [DocumentController::class, 'update'])->name('docu
 
 
 // Blog Posts
+
+Route::post('/update-post-status', [BlogPostController::class, 'updatePostStatus'])->name('update.post.status')->middleware(['auth', 'verified', 'permission:blog approved']);
+
+
 Route::controller(BlogPostController::class)->group(function(){
     Route::get('all-post', 'AllPost')->middleware(['auth', 'verified', 'permission:all post'])->name('all.post');
     Route::get('add-post', 'AddPost')->middleware(['auth', 'verified', 'permission:add post'])->name('add.post');

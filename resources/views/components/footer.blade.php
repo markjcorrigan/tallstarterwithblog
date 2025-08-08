@@ -8,7 +8,7 @@
         </p>
         <p class="text-white">underpinned by ITIL</p>
         <p class="small text-white">
-            <span class="text-white">&copy;</span> 2009 PMWay<br>
+            <span class="text-white">&copy; 2009 PMWay</span><br>
             <small>People Process Technology Governance Execution</small>
         </p>
         <br>

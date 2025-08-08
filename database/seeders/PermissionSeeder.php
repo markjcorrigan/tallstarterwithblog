@@ -78,6 +78,7 @@ class PermissionSeeder extends Seeder
             'documents edit',
             'documents update',
             'portfolio dash',
+            'blog approved',
         ];
 
 

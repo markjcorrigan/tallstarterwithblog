@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Cache;
+
 
 
 class BlogPostController extends Controller
@@ -135,4 +137,26 @@ class BlogPostController extends Controller
         ];
         return redirect()->back()->with($notification);
     } // End method
+
+//    public function approve(BlogPost $blogPost)
+//    {
+//        $blogPost->update(['approved' => true]);
+//
+//        return redirect()->route('all-post')->with('success', 'Blog post approved successfully');
+//    }
+
+    public function updatePostStatus(Request $request)
+    {
+        $post = BlogPost::find($request->post_id);
+        $post->approved = $request->approved;
+        $post->save();
+
+        // Forget the cache for approved posts
+        Cache::forget('approved_posts');
+
+        return response()->json(['status' => 200, 'message' => 'Post status updated successfully']);
+    }
+
+
+
 }

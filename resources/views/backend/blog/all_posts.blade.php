@@ -16,6 +16,7 @@
         <th>Author</th>
         <th>Post Title</th>
         <th>Action</th>
+        <th>Approved</th>
       </tr>
     </thead>
     <tbody>
@@ -29,6 +30,11 @@
                     <a href="{{ route('edit.post', [$post->id]) }}"  class="btn btn-inverse-light" style="margin-right: 10px;">Edit</a>
                     <a href="{{ route('delete.post', [$post->id]) }}" id="delete"  class="btn btn-inverse-danger">Delete</a>
                 </td>
+                <td>
+                    <div class="form-check form-switch mb-2">
+                        <input type="checkbox" class="form-check-input status-button" data-post-id="{{ $post->id }}" {{ $post->approved ? 'checked' : '' }}>
+                    </div>
+                </td>
            </tr>
         @endforeach
 
@@ -39,6 +45,36 @@
 </div>
     </div>
 </div>
+
+<script>
+    $(document).on('change', '.status-button', function(){
+        let post_id = $(this).data('post-id');
+        let is_checked = $(this).is(':checked');
+        console.log('post ID: ' + post_id);
+        console.log('Status: ' + is_checked);
+
+        // Send an ajax request to activate or deactivate a post
+        $.ajax({
+            url: "{{ route('update.post.status') }}", // This route should be different from the one that displays all posts
+            method: "POST",
+            data: {_token:"{{ csrf_token() }}", post_id:post_id, approved:is_checked ? 1 : 0},
+            dataType: "json",
+            success: function(result){
+                console.log('AJAX request successful');
+                console.log(result);
+                if(result.status == 200){
+                    toastr.success('post status updated successfully!');
+                }
+            },
+            error: function(xhr, status, error){
+                console.log('AJAX request failed');
+                console.log(xhr.responseText);
+            }
+        });
+    });
+
+
+</script>
 
 @endsection
 

@@ -5,16 +5,20 @@
              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
                 <p class="wow fadeInUp" data-wow-delay=".4s">
-                   Share your ideas
+                   Click for the detail
                 </p>
              </div>
           </div>
        </div>
        <div class="row">
-         @php
-             $posts = App\Models\BlogPost::Latest()->limit(3)->get();
-         @endphp
-         @unless (count($posts) == 0)
+{{--         @php--}}
+{{--             $posts = App\Models\BlogPost::Latest()->limit(3)->get();--}}
+{{--         @endphp--}}
+           @php
+               $posts = App\Models\BlogPost::where('approved', 1)->latest()->get();
+           @endphp
+
+       @unless (count($posts) == 0)
             @foreach ($posts as $post)
                   @php
                      $comments = App\Models\Comment::where('post_id', $post->id)->where('status', 1)->get();

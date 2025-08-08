@@ -25,8 +25,10 @@
             <h1 class="text-3xl font-bold mb-4">All Documents</h1>
 
 {{--                <i class="fa-duotone fa-truck" style="font-size: 30px !important; --fa-primary-color: #B1B1B1; --fa-secondary-color: #FFD700; --fa-primary-opacity: 1; --fa-secondary-opacity: 1;"></i>--}}
-
-
+{{--                <h1 class="text-3xl font-bold underline">--}}
+{{--                    Hello world!--}}
+{{--                </h1>--}}
+{{--                <x-cogsicon />--}}
 
                 <br>
             <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data" class="mb-8">

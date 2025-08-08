@@ -11,6 +11,7 @@
 	<title>PMWay Blog</title>
 
   <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -33,7 +34,9 @@
 	<link rel="stylesheet" href="{{ asset('../backend/assets/css/demo2/style.css') }}">
   <!-- End layout styles -->
 
-  <link rel="shortcut icon" href="{{ asset('../backend/assets/images/favicon.png') }}" />
+    <!--Favicon-->
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+{{--  <link rel="shortcut icon" href="{{ asset('../backend/assets/images/favicon.png') }}" />--}}
 
   <!-- toaster link starts -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
